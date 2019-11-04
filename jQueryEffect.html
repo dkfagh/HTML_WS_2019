@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQueryEffect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#box1").hide(500);
+            });
+            $("#btn2").click(function(){
+                $("#box1").show(500);
+            });
+            $("#btn3").click(function(){
+                $("#box1").fadeOut(2000);
+            });
+            $("#btn4").click(function(){
+                $("#box1").fadeIn(2000);
+            });
+            $("#btn5").click(function(){
+                $("#box1").slideUp(3000,"swing");
+            });
+            $("#btn6").click(function(){
+                $("#box1").slideDown(3000,"swing");
+            });
+            $("#btn7").click(function(){
+                $("#box1").toggle(500);
+            });
+            $("#btn8").click(function(){
+                $("#box1").fadeToggle(2000);
+            });
+            $("#btn9").click(function(){
+                $("#box1").slideToggle(3000,"swing");
+            });
+        });
+    </script>
+    <style>
+        #box1{width:100px; height:100px; background: red;}
+    </style>
+</head>
+<body>
+    <button type="button" id="btn1">btn1</button>
+    <button type="button" id="btn2">btn2</button>
+    <button type="button" id="btn3">btn3</button>
+    <button type="button" id="btn4">btn4</button>
+    <button type="button" id="btn5">btn5</button>
+    <button type="button" id="btn6">btn6</button>
+    <button type="button" id="btn7">btn7</button>
+    <button type="button" id="btn8">btn8</button>
+    <button type="button" id="btn9">btn9</button>
+    <div id="box1">
+        <h1>box1</h1>
+    </div>
+</body>
+</html>

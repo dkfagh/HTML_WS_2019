@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript02</title>
+    <script>
+        // 내장객체
+        var tv = new Object();
+        tv.color = "White";
+        tv.price = 300000;
+        tv.info = function(){
+            document.write("tv 색상:"+this.color+"<br>");
+            document.write("tv 가격:"+this.price+"<br>");
+        }
+
+        var car = {
+            color:"black",
+            price:5000000,
+            info:function(){
+                document.write("car 색상:"+this.color+"<br>");
+                document.write("car 가격:"+this.price+"<br>");
+            }
+        };
+
+        document.write("<h1>tv 객체 메서드 호출</h1>");
+        tv.info();
+        document.write("<h1>car 객체 메서드 호출</h1>");
+        car.info();
+
+
+        // 객체 생성자 함수 생성
+        function myCar(color,price){
+            this.color=color;
+            this.price=price;
+            this.info=function(){
+                document.write("car 색상:"+this.color+"<br>");
+                document.write("car 가격:"+this.price+"<br>");
+            }
+        }
+        var myCar=new myCar("white",60000000);
+        myCar.info();
+
+
+        // ECMAscript
+        class MyCar{
+            constructor(color, price){  // 생성자
+                this.color=color;
+                this.price=price;
+            }
+            info=function(){  // 메서드
+                document.write("car 색상:"+this.color+"<br>");
+                document.write("car 가격:"+this.price+"<br>");
+            };
+        }
+        const mycar2 = new MyCar("blue",70000000);
+        mycar2.info();
+
+
+        // 날짜객체
+        var today = new Date();
+        var nowMonth = today.getMonth();
+        nowDate = today.getDate();
+        nowDay = today.getDay();
+        nowHour = today.getHours();
+
+        document.write("<h1>오늘 날짜 정보</h1>");
+        document.write("현재 월 :"+nowMonth,"<br>");
+        document.write("현재 일 :"+nowDate,"<br>");
+        document.write("현재 요일 :"+nowDay,"<br>");
+        document.write("현재 시각 :"+nowHour,"<br>");
+
+        var worldcup = new Date(2002,4,31);
+        var theMonth = worldcup.getMonth();
+        theDate = worldcup.getDate();
+        theDay = worldcup.getDay();
+
+        document.write("<h1>월드컵 날짜 정보</h1>");
+        document.write("2002월드컵 몇 월 :"+theMonth,"<br>");
+        document.write("2002월드컵 몇 일 :"+theDate,"<br>");
+        document.write("2002월드컵 무슨 요일 :"+theDay,"<br>");
+
+
+        // 수학객체
+        var num = 2.1234;
+
+        var maxNum = Math.max(10, 5, 8, 30),
+        minNum =Math.min(10, 5, 8, 30),
+        roundNum = Math.round(num),
+        floorNum = Math.floor(num),
+        ceilNum = Math.ceil(num),
+        rndNum = Math.random();
+        piNum = Math.PI;
+
+        document.write(maxNum, "<br>");
+        document.write(minNum, "<br>");
+        document.write(roundNum, "<br>");
+        document.write(floorNum, "<br>");
+        document.write(ceilNum, "<br>");
+        document.write(rndNum, "<br>");
+        document.write(piNum, "<br>");
+
+
+        // 가위바위보
+        document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+
+        var game = prompt("가위, 바위, 보 중 선택하세요.","가위");
+        var gameNum;
+        switch(game){
+            case"가위":gameNum = 1; break;
+            case"바위":gameNum = 2; break;
+            case"보":gameNum = 3; break;
+            default:alert("잘못 작성했습니다.");
+            location.reload();
+        }
+
+        var com = Math.ceil(Math.random()*3);
+        // 자바스크립트 디버깅
+        // console.log(gameNum);
+        // console.log(com);
+
+        document.write("<img src=\"img/math_img_"+com+".jpg\">");
+
+        if(gameNum == com) {
+            document.write("<img src=\"img/game_1.jpg\">","<br>");
+        } else {
+            document.write("<img src=\"img/game_2.jpg\">","<br>");
+        }
+        
+
+        // 배열객체
+        var arr = [30, "따르릉", true];
+        var arr2 = new Array(40, "데르릉", false);
+
+        document.write("<h3>배열값 가져오기-1</h3>");
+        document.write(arr[0],"<br>");
+        document.write(arr[1],"<br>");
+        document.write(arr[2],"<br>");
+
+        document.write("<h3>배열값 가져오기-2</h3>");
+        for(var i = 0; i<arr.length;i++){
+            document.write(arr[i],"<br>");
+        }
+
+        document.write("<h3>배열값 가져오기-3</h3>");
+        for (i in arr2){
+            document.write(arr2[i],"<br>");
+        }
+
+
+        var arr_1 = ["사당", "교대", "방배", "강남"];
+        var arr_2 = ["신사", "압구정", "옥수"];
+
+        var result = arr_1.join(",");
+        console.log(result);
+
+        var result = arr_1.concat(arr_2);
+        console.log(result);
+
+        var result = arr_1.slice(1, 3);
+        console.log(result);
+
+        arr_1.sort();
+        console.log(arr_1);
+
+        arr_2.reverse();
+        console.log(arr_2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

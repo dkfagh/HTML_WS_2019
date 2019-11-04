@@ -1,0 +1,298 @@
+<!DOCTYPE html >
+
+<html>
+<head>	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title> responsive Web </title>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <style>
+        @charset "utf-8";
+        @import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+        /* reset */
+        * { margin:0;  padding:0;}
+        ol,ul { list-style: none; }
+        a { outline:0; text-decoration:none; color:#555; }
+        img { border:0;}
+        body { font:12px/1.6 'Poiret One'; color:#555; } 
+
+
+        /*레이아웃*/
+        header { position:fixed; width:15%; height:100%; background:#fff; top:0px; left:0px; transition:all 0.5s;}
+        nav { position:relative; width:85%; height:35px; background:#212121; margin-left:15%; transition:all 0.5s;}
+        section { width:85%; position:relative; margin-left:15%;}
+        article { position:relative;float:left; height:260px; transition:all 0.5s; animation:scale 1s 1;}
+
+        @keyframes scale {
+            0% { transform:scale(0); }	
+            100% { transform:scale(1); }
+        }
+
+        @keyframes rotate {
+            0% {transform: rotateX(0deg);}
+            100% {transform: rotateX(360deg);}
+        }
+
+		/* header 컨텐츠 */
+		header h1 { width:180px; height:136px; background:url(img/maldives/logo1.png) no-repeat 0px 0px; background-size:contain; position:absolute; top:70px; left:50%; margin-left:-90px; text-indent:-99999px;}
+		#gnb { position:absolute; top:300px; right:57px;}
+		#gnb a { display:block; padding:8px 30px;	font-size:17px; font-weight:bold; color:#555; text-align:left; line-height:1.8; transition:all .5s;}
+		#gnb a:hover { color:skyblue;}
+		#gnb a i { margin-right:13px;}
+		.snsSet { width:90px;	height:47px;	position:absolute; bottom:50px; right:50%; margin-right:-45px;}
+		.snsSet a { float:left;}
+
+		/*nav*/
+		nav a:nth-child(1) {	position:absolute; top:5px;	left:10px;}
+		nav a:nth-child(2) {	position:absolute; top:5px;	left:150px;}
+		nav a:nth-child(3) {	position:absolute; top:5px;	right:90px;}
+		nav a:nth-child(4) {	position:absolute; top:5px;	right:10px;}
+
+		article>div { position:relative; width:100%; height:100%; overflow:hidden; cursor:pointer; }
+
+        /* 각각 박스 크기지정*/
+        article:nth-child(1) { width:60%; height:520px; background:#ddd;}
+        article:nth-child(2) { width:40%; background:#ccc;}
+        article:nth-child(3) { width:20%; background:#bbb;}
+        article:nth-child(4) { width:20%; background:#aaa;}
+        article:nth-child(5) { width:20%; background:#999;}
+        article:nth-child(6) { width:40%; background:#888;}
+        article:nth-child(7) { width:20%; background:#777;}
+        article:nth-child(8) { width:20%; background:#666;}
+        article:nth-child(9) { width:40%; background:#555;}
+        article:nth-child(10) { width:20%; background:#444;}
+        article:nth-child(11) { width:20%; background:#333;}
+		article:nth-child(12) { width:20%; background:#222;}
+
+		.bg{background-size: cover !important;background-position: center center !important;}
+
+		.bg span{position:absolute;color:white;font-size: 60px;right:20px;bottom:0;transform: scale(5);opacity: 0;transition: 0.7s;}
+		.bg:hover span{transform:scale(1);opacity: 1;}
+
+		.bg1{background-image: url("img/maldives/pic1.jpg") !important;}
+		.bg2{background-image: url("img/maldives/pic2.jpg") !important;}
+		.bg3{background-image: url("img/maldives/pic3.jpg") !important;}
+		.bg4{background-image: url("img/maldives/pic4.jpg") !important;}
+		.bg5{background-image: url("img/maldives/pic5.jpg") !important;}
+		.bg6{background-image: url("img/maldives/pic6.jpg") !important;}
+		.bg7{background-image: url("img/maldives/pic7.jpg") !important;}
+
+		.bg1 span{position:absolute;right:-6px;bottom:-76px;color:white;font-size:170px;text-decoration: none;transition: 0.5s !important;}
+		.bg1:hover span{color:black !important;}
+		
+		.txt{background: white !important; color:#999; overflow: hidden;}
+		.txt:hover{background: rgb(86, 231, 250) !important; color:white;}
+
+		.txt p{position: absolute; top:45px;left:30px;}
+
+		.txt i{position:absolute;right:-300px;bottom:-70px;font-size: 300px;opacity:0;transition: 0.5s;}
+		.txt:hover i{opacity:1;right:5px; color:rgb(116, 239, 255);}
+		
+		.txt strong{font-size: 30px;}
+
+		@media screen and (min-width:1280px) and (max-width:1599px) {  
+		header { position:relative; width:100%; height:80px;}
+		nav { width:100%; margin-left:0%;}		
+		section { width:100%; margin-left:0px;}	
+
+		/* header 컨텐츠 */
+		header h1 { width:200px; height:40px; background-image:url(img/maldives/logo2.png); top:20px; left:20px; margin-left:0px;}	
+		#gnb { top:20px; right:200px;}	
+		#gnb li { float:left;}
+		.snsSet { bottom:20px; right:80px;}
+		}
+
+		@media screen and (min-width:1024px) and (max-width:1279px) {  	
+		header { position:relative; width:100%; height:80px;}
+		nav { width:100%; margin-left:0%;}		
+		section { width:100%; margin-left:0px;}	
+		
+		article:nth-child(1) { width:75%;}	
+		article:nth-child(2) { width:25%;}	
+		article:nth-child(3) { width:25%;}	
+		article:nth-child(4) { width:25%;}	
+		article:nth-child(5) { width:25%;}	
+		article:nth-child(6) { width:50%;}	
+		article:nth-child(7) { width:50%;}	
+		article:nth-child(8) { width:25%;}	
+		article:nth-child(9) { width:25%;}	
+		article:nth-child(10) { width:50%;}	
+		article:nth-child(11) { width:25%;}	
+		article:nth-child(12) { width:25%;}
+		}
+
+		@media screen and (min-width:780px) and (max-width:1023px) {  
+		header { position:relative; width:100%; height:80px;}
+		nav { width:100%; margin-left:0%;}		
+		section { width:100%; margin-left:0px;}	
+
+		article:nth-child(1) { width:100%;	height:400px;}	
+		article:nth-child(2) { width:66.6666%;}	
+		article:nth-child(3) { width:33.3333%;}	
+		article:nth-child(4) { width:33.3333%; display:none;}	
+		article:nth-child(5) { width:33.3333%;}	
+		article:nth-child(6) { width:66.6666%;}	
+		article:nth-child(7) { width:66.6666%; display:none;}	
+		article:nth-child(8) { width:33.3333%;}	
+		article:nth-child(9) { width:33.3333%;}	
+		article:nth-child(10) { width:66.6666%; display:none;}	
+		article:nth-child(11) { width:33.3333%;}	
+		article:nth-child(12) { width:33.3333%; display:none;}
+		}
+
+		@media screen and (min-width:640px) and (max-width:779px) {  
+		header { position:relative; width:100%; height:80px;}
+		nav { width:100%; margin-left:0%;}		
+		section { width:100%; margin-left:0px;}	
+
+		article:nth-child(1) { width:100%;	height:400px;}
+		article:nth-child(2) { width:100%;}	
+		article:nth-child(3) { width:33.3333%; display:none;}	
+		article:nth-child(4) { width:100%;	display:none;}	
+		article:nth-child(5) { width:50%;}	
+		article:nth-child(6) { width:50%;}	
+		article:nth-child(7) { width:66.6666%; display:none;}	
+		article:nth-child(8) { width:50%;}	
+		article:nth-child(9) { width:50%;}	
+		article:nth-child(10) { width:66.6666%; display:none;}	
+		article:nth-child(11) { width:50%;}	
+		article:nth-child(12) { width:50%;}	
+		}
+
+		@media screen and (min-width:560px) and (max-width:639px) {  
+		header { position:relative; width:100%; height:130px;}	
+		nav { display:none;}
+		section { width:100%; margin-left:0px;}
+		article { height:150px;}	
+
+		article:nth-child(1) { width:100%; height:300px;}		
+		article:nth-child(2) { width:100%;}	
+		article:nth-child(3) { width:33.3333%; display:none;}	
+		article:nth-child(4) { width:100%;	display:none;}	
+		article:nth-child(5) { width:50%;}	
+		article:nth-child(6) { width:50%;}	
+		article:nth-child(7) { width:66.6666%; display:none;}	
+		article:nth-child(8) { width:50%;}	
+		article:nth-child(9) { width:50%;}	
+		article:nth-child(10) { width:66.6666%; display:none;}	
+		article:nth-child(11) { width:50%;}	
+		article:nth-child(12) { width:50%;}
+		}
+
+		@media screen and (max-width:559px){
+		header { position:fixed; width:100%; height:40px; background-color:transparent; z-index:5;}
+		nav { display:none;}	
+		section { width:100%; margin-left:0px; z-index:4;}		
+		article { display:none;}
+		article:nth-child(1) { display:block; position:fixed; width:100%; height:100%;}	
+		}
+    </style>
+</head>
+<body>
+
+	<header>	
+		<h1>logo</h1>
+		<ul id="gnb">
+			<li><a href="#"><i class="fa fa-header"></i>Hotel</a></li>
+			<li><a href="#"><i class="fa fa-building-o"></i>Fucility</a></li>
+			<li><a href="#"><i class="fa fa-suitcase"></i>Business</a></li>
+			<li><a href="#"><i class="fa fa-cutlery"></i>Restaurant</a></li>	
+		</ul>		
+	
+		<div class="snsSet">
+			<a href="#"><img src="img/maldives/sns1.png" alt="about" /></a>
+			<a href="#"><img src="img/maldives/sns2.png" alt="contact" /></a>
+			<a href="#"><img src="img/maldives/sns3.png" alt="facebook" /></a>
+			<a href="#"><img src="img/maldives/sns4.png" alt="twitter" /></a>
+			<a href="#"><img src="img/maldives/sns5.png" alt="etc" /></a>
+		</div>	
+	</header>
+	
+	<nav>
+		<a href="#"><img src="img/maldives/util1.png" alt="" /></a>
+		<a href="#"><img src="img/maldives/util2.png" alt="" /></a>
+		<a href="#"><img src="img/maldives/util3.png" alt="" /></a>
+		<a href="#"><img src="img/maldives/util4.png" alt="" /></a>		
+	</nav>
+	
+	<section>
+		<article class="bg bg1">
+			<span>Maldives</span>
+		</article>
+		
+		<article class="txt">				
+			<i class="fa fa-arrow-right"></i>
+			<p>
+				<strong>A Whole New World</strong><br />
+				<em>I can show you the world. Shining Shimmering Splended.<br />
+				Tell me when you decide let me be in your heart.</em>
+			</p>
+		</article>
+		
+		<article class="txt">		
+			<i class="fa fa-spin fa-refresh"></i>
+			<p><strong>Reservation</strong></p>		
+		</article>
+		
+		<article class="bg bg2">			
+			<span>Suite</span>
+		</article>
+		
+		<article class="bg bg3">	
+			<span>Surf</span>		
+		</article>
+		
+		<article class="txt">	
+			<i class="fa fa-arrow-right"></i>
+			<p>
+				<strong>A Dazzling Place</strong><br />
+				<em>I can show you the world. Shining Shimmering Splended.<br />
+				Tell me when you decide .</em>
+			</p>			
+		</article>
+		
+		<article class="bg bg4">	
+			<span>Sauna</span>		
+		</article>
+		
+		<article class="txt">		
+			<i class="fa fa-arrow-right"></i>
+			<p>
+				<strong>Hot spot</strong><br />
+				<em>a best place to have a vacation <br />
+				Tell me when you</em>		
+			</p>	
+		</article>
+		
+		<article class="bg bg5">	
+			<span>Diner</span>		
+		</article>
+		
+		<article class="bg bg6">	
+			<span>Spa</span>			
+		</article>
+		
+		<article class="txt">	
+			<i class="fa fa-arrow-right"></i>
+			<p>
+				<strong>Open Space</strong><br />
+				<em>I Can show you the world</em>
+			</p>	
+		</article>
+		
+		<article class="bg bg7">			
+			<span>Tour</span>	
+		</article>		
+	</section>
+
+</body>
+</html>
+
+
+
+
+
+
+

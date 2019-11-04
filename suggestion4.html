@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<style>
+    li{list-style: none;}    
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+function setKeyword(keyword){
+    document.form1.keyword.value=keyword;
+    document.getElementById("txtHint").style.display="none";
+}    
+    
+function showHint(str) {
+    console.log(str.length);
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";  //입력된 검색어가 없을때 초기화
+        return;
+    } else {
+            var output="<ul>";
+            var keyword;
+        
+            $.getJSON("http://dkfagh.dothome.co.kr/suggestionJson_dkfagh.php?q="+encodeURI(str),function(data){
+                console.log("test");
+                $.each(data,function(key,value){
+                    
+                    keyword=value.keyword;
+                    
+                    output+="<li><a href='#' onClick='setKeyword(\""+keyword+"\")'>"+keyword+"</a></li>";  //검색어를 선택하면 txtHint에 텍스트를 출력하고 suggestion목록을 숨김
+                });
+                
+                 output+="</ul>";
+                    
+                 $("#txtHint").show();
+                 $("#txtHint").html(output);  //suggestion목록을 출력
+            });
+            
+    }
+}
+    
+$(document).ready(function(){
+      $("#search").keyup(function(){  //키보드를 눌렀다 뗄때
+          showHint($(this).val());    //값을 받아옴
+      });      
+});
+    
+    
+</script>
+</head>
+<body>
+
+
+<form name="form1"> 
+<input type="text" id="search" name="keyword" placeholder="검색어를 입력하세요" onkeyup="showHint(this.value)">
+</form>
+<div id="txtHint" style="display:none;"></div>
+</body>
+</html>

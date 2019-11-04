@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20191029</title>
+    <script>
+        var time_auto = setInterval(function() {
+            var today = new Date();
+            nowYear = today.getFullYear();
+            nowMonth = today.getMonth();
+            nowDate = today.getDate();
+            nowHour = today.getHours();
+            nowMinute = today.getMinutes();
+            nowSecond = today.getSeconds();
+
+            var h1=document.getElementById("clock");
+            h1.innerHTML=nowYear+"/"+nowMonth+"/"+nowDate+" "+nowHour+":"+nowMinute+":"+nowSecond;
+        }, 1000);
+        
+
+    </script>
+</head>
+<body>
+    <h1>현재 시각</h1>
+    <h1 id="clock"></h1>
+
+    <input type="text" id="keyword">
+    <select id="engines">
+        <option value="google">google</option>
+        <option value="naver">naver</option>
+        <option value="wikipedia">wikipedia</option>
+    </select>
+    <input type="button" value="검색" onclick="search()">
+    <script>
+        function search() {
+            var engine=document.getElementById("engines").value;
+            console.log(engine);
+            var keyword=document.getElementById("keyword").value;
+            console.log(keyword);
+            
+            // if(engine=="google"){
+            //     location.href="https://www.google.com/search?q="+keyword+"&oq="+keyword+"&aqs=chrome..69i57.1828j0j1&sourceid=chrome&ie=UTF-8";
+            // } else if(engine=="naver"){
+            //     location.href="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query="+keyword;
+            // } else if(engine=="wikipedia"){
+            //     location.href="https://ko.wikipedia.org/wiki/"+keyword;
+            // }
+
+            switch(engine){
+                case"google":location.href="https://www.google.com/search?q="+keyword+"&oq="+keyword+"&aqs=chrome..69i57.1828j0j1&sourceid=chrome&ie=UTF-8";
+                break;
+                case"naver":location.href="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query="+keyword;
+                break;
+                case"wikipedia":location.href="https://ko.wikipedia.org/wiki/"+keyword;
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

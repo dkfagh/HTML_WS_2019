@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQueryEvent</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //단독 이벤트 등록
+            $("#btn1").click(function(){
+                $("#box1").css("background","magenta");
+            });
+            $("#btn1").click();  //이벤트 강제 실행(parameter 없음)
+            //그룹 이벤트 등록 1.
+            $("#btn2").on("click",function(){
+                $("#box1").css("background","cyan");
+            });
+            //그룹 이벤트 등록 2.
+            $("#btn3").on({"click":function(){
+                $("#box1").css("color","darkgray");
+            }});
+
+            $(".btn1").on("click",function(e){
+                e.preventDefault();  //링크 이벤트 차단
+                $(".txt1").css({"background-color":"bisque"});  //CSS를 객체로 설정{"속성명":"값"}
+                //$(".txt1").css({backgroundColor:"bisque"});  //Camel표기법 사용
+            });
+            $(".btn2").click(function(){
+                location.href="http://www.google.com";
+            });
+
+            $("#btn4").mouseover(function(){
+                alert("점심시간!");
+            });
+            $("#btn5").mouseout(function(){
+                alert("식사 맛있게 하세요!");
+            });
+            $("#btn6").hover(
+                function(){$("body").css("background","gray");},
+                function(){$("body").css("background","white");}
+            );
+
+            $("#id,#pw").on("focus",function(){
+                $(this).css("background","cadetblue");
+            });
+            $("#id,#pw").on("blur",function(){
+                $(this).css("background","white");
+            });
+
+            $("#title").on("change",function(){
+                $(this).val();
+                console.log($(this).val);
+            });
+
+            $("#rel_site").on("change",function(){  //검색 후 동일 검색엔진으로 다시 검색하고싶은경우 안넘어감
+                if($(this).val()!=""){
+                    location.href=$(this).val()+$("#keyword").val();
+                }                
+            });
+
+            $("#introduce").on("keyup",function(){
+                console.log($(this).val());
+                if($(this).val().length>100){
+                    alert("100자 초과!")
+                }
+            });
+
+            //delegata : 부모인 #box2에 click 이벤트를 위임.
+            //           실제로는 자식인 #btnDynamic에 click발생되면 처리
+            $("#box2").on("click","#btnDynamic",function(){
+                $("body").css("background","bisque");
+                console.log("클릭");
+            });
+            // $("#box2").delegate("#btnDynamic","click",function(){
+            //     $("body").css("background","bisque");
+            //     console.log("클릭");
+            // });
+            // $("#btnDynamic").click(function(){
+            //     $("body").css("background","bisque");
+            // });
+
+            $("#box2").append("<button id='btnDynamic'>버튼</button>");
+
+            // $("#btnDynamic").click(function(){
+            //     $("body").css("background","bisque");
+            // });
+        });
+    </script>
+</head>
+<body>
+    <div id="box1">
+        <h1>box1</h1>
+    </div>
+    <button type="button" id="btn1">click1</button>
+    <button type="button" id="btn2">click2</button>
+    <button type="button" id="btn3">click3</button>
+    <button type="button" id="btn4">mouseOver</button>
+    <button type="button" id="btn5">mouseOut</button>
+    <button type="button" id="btn6">mouseHover</button>
+
+    <p>
+        <a href="http://www.naver.com" class="btn1">button1</a>
+        <a href="#" class="btn2">button2</a>
+    </p>
+    <p class="txt1">
+        내용1
+    </p>
+
+    ID <input type="text" id="id"><br>
+    PW <input type="password" id="pw"><br>
+
+    자기소개 (최대 100자)<br>
+    <textarea id="introduce" rows="10" cols="50"></textarea><br>
+    TITLE <input type="text" id="title"><br>
+
+    <input type="text" id="keyword">
+    <select id="rel_site">
+        <option value="">사이트 선택</option>
+        <option value="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=">네이버</option>
+        <option value="https://www.google.com/search?q=">구글</option>
+        <option value="https://search.daum.net/search?nil_suggest=btn&w=tot&DA=SBC&q=redd&spacing=3&orgq=">다음</option>
+    </select>
+    <p class="txt"></p>
+
+    <div id="box2">
+        <!-- 버튼을 동적으로 생성 -->
+    </div>
+</body>
+</html>

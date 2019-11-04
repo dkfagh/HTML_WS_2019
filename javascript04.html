@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript04</title>
+    <script>
+        document.write("<h3>substr로 파일확장자 구하기</h3>","<br>")
+        var fileName="a.b.c.js";
+        document.write(fileName.indexOf("."),"<br>");
+        document.write(fileName.lastIndexOf("."),"<br>");
+        var positionOfLastDot=fileName.lastIndexOf(".");
+        document.write(fileName.substr(positionOfLastDot+1),"<br>");
+
+
+
+        document.write("<h3>split(데이터 나누기)</h3>","<br>")
+        var data="hkd,홍길동,서울시";
+        var sData=data.split(",");
+        for(var i=0;i<sData.length;i++){
+            document.write(sData[i],"<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

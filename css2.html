@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS2</title>
+    <!------------------- External CSS (공통모듈)--------------->
+    <!----------- 공통으로 적용할 옵션 먼저 작성 ---------------->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!------------------- Internal CSS ----------------------->
+    <style>
+        .color1{color:aqua;}
+        .color2{color:#ff0000;}
+        .color3{color:rgb(255,0,0);}
+        .color4{color:hsl(0, 100%, 50%);}
+        .color5{color:rgba(255,0,0,0.5);}
+        .color6{color:hsla(0, 100%, 50%,0.5);}
+        body{
+            /* background-image:url("img/bg.jpg");
+            background-repeat: no-repeat;
+            background-position:right top;
+            background-attachment: fixed; */
+            
+            /* 동일한 접두어를 갖는 명령문들은 한꺼번에 표기 가능 */
+            background:#eeeeee url("img/bg.jpg") no-repeat right top fixed;
+            /* cccccc, dddddd, eeeeee -> 회색 만들기 */
+        }
+        h3 {
+            border-left:6px solid red;
+            background-color:lightgrey;
+        }
+        div {
+            border:1px solid black;
+            /* !important : 부모의 설정값을 무시하고 강제로 최우선순위 설정 */
+            width:300px !important;
+            height:300px;
+            border-radius: 10px;
+            /* div태그를 수평형으로 배치(공간이 있을경우) */
+            /* float:left; */
+        }
+        #box1{
+            border:1px solid red;
+            width:300px;
+            height:300px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <p class="color1">test</p>
+    <h1 class="color1">test</h1>
+    <p class="color1">test</p>
+    <!---------------- Inline CSS -------------------->
+    <h1 class="color1" style="color:violet">test</h1>
+    <p>test</p>
+    <br/><br/><br/><br/><br/>
+    <h1 class="color2">test</h1>
+    <h1 class="color3">test</h1>
+    <br/><br/><br/><br/><br/>
+    <h1 class="color4">test</h1>
+    <br/><br/><br/><br/><br/>
+    <h1 class="color5">test</h1>
+    <br/><br/><br/><br/><br/>
+    <h1 class="color6">test</h1>
+
+    <h3>test</h3>
+
+    <div id="box1">box1</div>
+    <div>box2</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>scrollEvent02</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <script>
+        $(document).ready(function(){
+            $(window).on("scroll",function(){
+                var sc_top=$(this).scrollTop();  //$(this)는 window를 가리킴(이벤트가 발생한 것)
+                console.log(sc_top);
+                if(sc_top>200){
+                    $("#content1").css("display","block");
+                    $("#content1").addClass("bounceInLeft").addClass("animated");
+                }
+                if(sc_top>700){
+                    $("#content2").css("display","block");
+                    $("#content2").addClass("fadeInRightBig").addClass("animated");
+                }
+            });
+        });
+    </script>
+    <style>
+        div{height:500px;}
+        #content1{width:300px;height:300px;background: red; display:none;}
+        #content2{width:100%;height:100px;background: brown; display:none;}
+    </style>
+</head>
+<body>
+    <div id="box1">
+        box1
+    </div>
+    <div id="box2">
+        box2
+    </div>
+    <div id="box3">
+        box3
+        <div id="content1">
+            content1
+        </div>
+    </div>
+    <div id="box4">
+        box4
+        <div id="content2">
+            content2
+        </div>
+    </div>
+    <div id="box5">
+        box5
+    </div>
+</body>
+</html>

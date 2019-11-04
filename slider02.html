@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slider02</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        *{padding:0;margin:0;}
+        #sliderBox{position: relative;width:600px;height:400px;overflow: hidden;}
+        #imgBox{position:relative;width:3000px;height:400px;}
+        #imgBox img{width:600px;height:400px;float: left;}
+        img{width:600px; height:400px;}
+        #dotBox{position:absolute; width:600px; bottom:10px; left:270px;}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#dotBox>a").click(function(){
+                //600px * dot의 인덱스만큼 왼쪽으로 이동
+                var moveLeft=-(600*$(this).index());
+                console.log(moveLeft);
+                $("#imgBox").animate({left:moveLeft},500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="sliderBox">
+        <div id="imgBox">
+            <img src="img/maldives/pic1.jpg" alt="pic1">
+            <img src="img/maldives/pic2.jpg" alt="pic2">
+            <img src="img/maldives/pic3.jpg" alt="pic3">
+            <img src="img/maldives/pic4.jpg" alt="pic4">
+            <img src="img/maldives/pic5.jpg" alt="pic5">
+        </div>
+        <div id="dotBox">
+            <a href="#">*</a>
+            <a href="#">*</a>
+            <a href="#">*</a>
+            <a href="#">*</a>
+            <a href="#">*</a>
+        </div>
+    </div>
+</body>
+</html>

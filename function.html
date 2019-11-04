@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function</title>
+    <script>
+        // 함수 생성
+        function sum(a,b){
+            return a+b;
+        }
+        document.write(sum(10,20),"<br>");
+
+        // 익명 함수(변수/레퍼런스로 호출))
+        var sum2 = function(a,b){
+            document.write(a+b+"<br>");
+        }
+        document.write(sum2(10,20),"<br>");
+
+        function sum3(){
+            return arguments[0]+arguments[1]+arguments[2];
+        }
+        document.write(sum3(10,20,30),"<br>");
+    </script>
+</head>
+<body>
+    <!-- onclick으로 함수 호출 중요! -->
+    <input type="button" value="클릭" onclick="sum2(30,40)">
+</body>
+</html>

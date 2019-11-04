@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mediaquery</title>
+    <style>
+        *{margin:0;padding:0;}
+        #box1{width:25%;height:500px;background: red;box-sizing: border-box;float:left;}
+        #box2{width:25%;height:500px;background: green;box-sizing: border-box;float:left;}
+        #box3{width:25%;height:500px;background: blue;box-sizing: border-box;float:left;}
+        #box4{width:25%;height:500px;background: black;box-sizing: border-box;float:left;}
+
+        @media screen and (max-width: 1200px){
+            #box1, #box2, #box3, #box4{width:50%;}
+        }
+
+        @media screen and (max-width: 800px){
+            #box1, #box2, #box3, #box4{width:100%;}
+        }
+
+        @media print{
+            #box1, #box2, #box3, #box4{background: red;color:white;}
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+    <div id="box4">box4</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Box</title>
+    <!---------------------- 아이콘 설정 -------------------------------->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!------------------------- 폰트 설정 ------------------------------->
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        /* 화면을 정확하게 분할 할 경우 box-sizing:border-box 꼭 쓰기 */
+        div{width:25%;height:300px;float:left;padding:50px;box-sizing:border-box;}
+        #box1{background:red;}
+        #box2{background:blue;}
+        #box3{background:green;}
+        #box4{background:olive;}
+        /* 글자 간격 설정 */
+        p{letter-spacing: 10px; word-spacing: 10px; width:300px; line-height: 50px; text-shadow: 2px 2px #8d8d8d;}
+        h1{font-family: 'Anton', sans-serif;}
+        .fa-heart{font-size:30px; color:orange;}
+
+        /* unvisited link */
+a:link {color: red;text-decoration:none;}
+
+/* visited link
+a:visited {color: red;} */
+
+/* mouse over link */
+a:hover {color: hotpink;}
+
+/* selected link
+a:active {color: blue;} */
+
+#btn a{
+  background-color: #f44336;
+  color: white;
+  padding: 18px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com">네이버</a><br/>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+    <div id="box4">box4</div>
+    <p>css는 웹페이지에서 스타일을 지정할 때 사용되는 언어 입니다.</p>
+    <h1>Hello World!</h1>
+    <!-- i태그는 의미 없음(이탤릭체 아님) -->
+    <i class="fas fa-heart"></i>
+    <i class="far fa-heart"></i>
+    <i class="fas fa-heart" style="font-size:48px;color:red;"></i>
+    <div id="btn">
+        <a href="http://www.google.com">구글</a><br/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addClass</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $("#btn1").click(function(){
+                $("h1").addClass("on");
+           }); //click이벤트
+           $("#btn2").click(function(){
+                $("h1").removeClass("on");
+           });
+           $("#btn3").click(function(){
+                $("h1").toggleClass("on");
+           });
+        });
+    </script>
+    <style>
+        .on{ background: green;}
+    </style>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <input type="button" value="click" id="btn1">
+    <input type="button" value="click" id="btn2">
+    <input type="button" value="click" id="btn3">
+</body>
+</html>

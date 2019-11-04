@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20191031</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        *{padding:0;margin:0;}
+
+        #menuTop1{position:fixed; width:100%; height:100px; top:0; background: lavender;}
+        #menuTop2{position: sticky; width:100%; top:0; background: lavenderblush;}
+
+        /* #sliderBox{position: relative;width:600px;height:400px;overflow: hidden;} */
+
+        /* #imgBox{position:relative;width:3000px;height:400px;}
+        #imgBox img{width:600px;height:400px;float: left;}
+        img{width:600px; height:400px;}
+
+        #dotBox{position:absolute; width:600px; bottom:10px; left:270px;}
+        #dotBox a{text-decoration: none; color:white;}
+
+        .arrow{position:absolute;width:20px;height:20px;background: black;}
+        .arrow a{text-decoration: none; font-size:20px; color:white;}
+        #left{left:0;top:180px;}
+        #right{right:0;top:180px;} */
+
+        #empty{height:8000px;}
+
+        #box1{position:relative; width:800px; height:600px; margin:auto;}
+        #box_left{position:absolute; width:300px; height:500px; left:0; border:2px solid red; display:none;}
+        #box_right{position:absolute; width:300px; height:500px; right:0; border:2px solid blue; display:none;}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(window).on("scroll",function(){
+                var sc_top=$(this).scrollTop();
+                console.log(sc_top);
+                if(sc_top>200){
+                    $("#menuTop1").slideUp(300,"linear");
+                    //$("#menuTop2").animate({top:"50px"},300,"linear");
+                } else {
+                    $("#menuTop1").slideDown(300,"linear");
+                    //$("#menuTop2").css("top","50px");
+                }
+            });
+
+            // $("#dotBox>a").click(function(){
+            //     //600px * dot의 인덱스만큼 왼쪽으로 이동
+            //     var move=-(600*$(this).index());
+            //     console.log(move);
+            //     $("#imgBox").animate({left:move},500);
+            // });
+
+            // $("#left").click(function(){
+            //         $("#imgBox").animate({left:"600px"},500);
+            // });
+            // $("#right").click(function(){
+            //         $("#imgBox").animate({right:"600px"},500);
+            // });
+
+            $(window).on("scroll",function(){
+                var sc_top=$(this).scrollTop();  //$(this)는 window를 가리킴(이벤트가 발생한 것)
+                console.log(sc_top);
+                if(sc_top>7600){
+                    $("#box_left").css("display","block");
+                    $("#box_left").addClass("rotateInDownLeft").addClass("animated");
+                    $("#box_right").css("display","block");
+                    $("#box_right").addClass("rotateInDownRight").addClass("animated");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="menuTop1">facebook twitter google++</div>
+    <div id="menuTop2">product | contact | map</div>
+
+    <!-- <div id="sliderBox">
+        <div id="imgBox">
+            <img src="img/maldives/pic1.jpg" alt="pic1">
+            <img src="img/maldives/pic2.jpg" alt="pic2">
+            <img src="img/maldives/pic3.jpg" alt="pic3">
+            <img src="img/maldives/pic4.jpg" alt="pic4">
+            <img src="img/maldives/pic5.jpg" alt="pic5">
+        </div>
+        <div id="dotBox">
+            <a href="#">●</a>
+            <a href="#">●</a>
+            <a href="#">●</a>
+            <a href="#">●</a>
+            <a href="#">●</a>
+        </div>
+        <div class="arrow" id="left"><a href="#">&lt;</i></a></div>
+        <div class="arrow" id="right"><a href="#">&gt;</i></a></div>
+    </div> -->
+
+    <div id="empty"></div>
+    <div id="box1">
+        <div id="box_left">LEFT</div>
+        <div id="box_right">RIGHT</div>
+    </div>
+</body>
+</html>

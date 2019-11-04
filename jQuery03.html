@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery01</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 스크립트 순서 상 헤드의 스크립트는 에러 발생 -->
+    <!-- <script>
+            var h2=document.getElementById("tit");
+            h2.setAttribute("width","300");
+        </script> -->
+        <script>
+            window.onload=function(){ // .onload : 문서 로딩이 완료 된 후 스크립트 실행
+                var h2=document.getElementById("tit");
+                h2.setAttribute("width","300");
+            }
+            </script>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h2 id="tit" width="100">선택자</h2>
+    <h3 class="tit">직접 선택자</h3>
+    <!-- <script>
+            var h2=document.getElementById("tit");
+            h2.setAttribute("width","300");
+        </script> -->
+</body>
+</html>

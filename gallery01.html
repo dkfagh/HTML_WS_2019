@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gallery01</title>
+    <script>
+        var num=1; //이미지번호
+        function gallery(direct){
+            //direct가 1이면 다음, 0이면 이전
+            if(direct){
+                if(num==7){
+                    //return;
+                    num=0;
+                }
+                num++;
+            } else {
+                if(num==1){
+                    //return;
+                    num=8;
+                }
+                num--;
+            }
+            //id가 photo인 엘리먼트 찾기
+            var imgTag=document.getElementById("photo");
+            imgTag.setAttribute("src","img/maldives/pic"+num+".jpg")
+        }
+        
+    </script>
+</head>
+<body>
+    <img src="img/maldives/pic1.jpg" width="400" height="300" id="photo"><br>
+    <button onclick="gallery(0)">이전</button>
+    <button onclick="gallery(1)">다음</button>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>introduce3</title>
+    <style>
+            #footer{position: fixed;bottom:0;width:100%;}
+            .ui-grid-a img{float:left;padding-right:10px;}
+            .ui-grid-a p{font-size: 15px;}
+            .title{color:blue;font-size: 16px;}
+            
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['평점', 'point'],
+        ['연출',     27],
+        ['연기',      26],
+        ['스토리',  28],
+        ['영상미', 13],
+        ['OST',    6]
+        ]);
+
+
+        var options = {
+          title: '감상포인트',
+            is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+</head>
+<body>
+    <div data-role="page">
+
+        <div data-role="header">
+            <a href="index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
+            <a href="index.html" rel="external" data-icon="back" data-iconpos="notext" ui-btn-icon="right">Prev</a>
+            <h3>영화 소개</h3>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="introduce.html" rel="external">줄거리</a></li>
+                    <li><a href="introduce2.html" rel="external">등장인물</a></li>
+                    <li><a href="introduce3.html" class="ui-btn-active" rel="external">감상 포인트</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+        <div data-role="ui-content">
+                <h3>감상 포인트</h3>
+        <div id="piechart" style="width: 100%; height: 500px;"></div>
+        </div>
+        <div data-role="footer" id="footer">
+            <h3>&copy;CGV.All rights reserved.</h3>
+        </div>
+    </div>
+</body>
+</html>

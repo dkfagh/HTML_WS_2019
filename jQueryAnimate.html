@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQueryAnimate</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#box1").animate({left:"500px"},2000).animate({left:"0px"},2000);
+
+            $("#btn1").click(function(){
+                $("#box1").stop();  //animation 중지  ->  stop(false,false)와 동일
+            });
+            $("#btn2").click(function(){
+                $("#box1").stop(true, false);  //ClearQueue는 true, finish는 false
+            });
+            $("#btn3").click(function(){
+                $("#box1").stop(true, true);  //ClearQueue는 true, finish는 true
+            });
+            $("#btn4").click(function(){
+                $("#box1").stop(false, false);  //ClearQueue는 false, finish는 false
+            });
+            $("#btn5").click(function(){
+                $("#box1").stop(false, true);  //ClearQueue는 false, finish는 true
+            });
+        });
+    </script>
+    <style>
+        #box1{width:100px; height:100px; background: red; position: relative; left:0;}
+    </style>
+</head>
+<body>
+    <button type="button" id="btn1">stop</button>
+    <button type="button" id="btn2">stop(true,false)</button>
+    <button type="button" id="btn3">stop(true,true)</button>
+    <button type="button" id="btn4">stop(false,false)</button>
+    <button type="button" id="btn5">stop(false,true)</button>
+    <div id="box1">
+        <h1>box1</h1>
+    </div>
+</body>
+</html>

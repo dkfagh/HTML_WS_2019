@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20191017</title>
+    <style>
+        p:nth-child(1){color:red;}
+
+        #coffee{top:0;left:0;opacity: 0.7;transition: 2s;position:relative;}
+        #coffee:hover{transform:scale(1.5);opacity: 1;}
+
+        h1{position:relative;animation: ani 1s 1;}
+
+        @keyframes ani{
+            0%{left:-200px;}
+            100%{left:0;}
+        }
+
+        .box{display:inline-block;background:mediumslateblue;transition:1s;}
+        .box:hover{transform:scale(1.2);background:midnightblue;color:white;}
+
+        #loading{position: relative;width:100px;height:100px;border:dotted 2px;border-top: red 10px;border-radius: 50%;opacity: 0;
+                 animation: rotate 3s 1 linear;}
+
+        @keyframes rotate {
+            from{transform: rotate(0deg);opacity: 1;}
+            to{transform: rotate(1080deg);opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+        <p>html5</p>
+        <p>html5</p><br/>
+        <img id="coffee" src="img/coffee.jpg" alter="coffee"><br/>
+        <h1>HTML5</h1><br/>
+        <ul>
+            <div>BOX</div>
+            <li>
+                <div class="box">box1</div>
+            </li>
+            <li>
+                <div class="box">box2</div>
+            </li>
+            <li>
+                <div class="box">box3</div>
+            </li>
+        </ul><br/>
+        <div id="loading"></div>
+</body>
+</html>

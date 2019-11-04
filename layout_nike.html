@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <title>nike</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Play&display=swap');
+        *{margin:0;padding:0;}
+        ol, ul {list-style: none;}
+        a {text-decoration:none;color:#bbb;}
+        .vid{width:100%;height:100%;position:fixed;}
+        .vid video{width:100%;min-width: 1600px;}
+        body{background: #111;}
+        h1 { position:fixed; top:40px; left:40px; z-index:10;}
+        h1 img { width:280px; height:auto;}
+        header{position:fixed;width:700px;height:100%;background: greenyellow;transform:skewX(-40deg);top:0px;left:-420px;}
+
+        /* 1 depth */
+        #gnb { 	width:220px; position:absolute; top:150px; right:0px;}
+        #gnb>li {position:relative; }
+        #gnb>li>a { display:block; width:220px; height:50px; font:bold 18px/3 play; color:#222; box-sizing:border-box; padding-right:40px; text-align:right;}
+        #gnb>li.on>a { background:#111; color:#fff;}
+        #gnb>li:hover>a { background:#111; color:#fff;}
+        #gnb em { display:inline-block; transform:skewX(40deg)!important; }
+        #gnb em i { 	margin-right:20px;}
+
+        /* 2 depth */
+        #gnb ul { position:absolute; left:0px;  top:0px; opacity:0; transition:all 0.4s;}
+        #gnb>li:hover ul { opacity:0.8; left:205px; }
+        #gnb ul a { display:block; width:150px; height:40px; background:#222; border-bottom:1px solid #b9fb05; font:bold 16px/2.5 arial; color:#fff;
+                     box-sizing:border-box; padding-left:50px; margin-bottom:3px; transition:all 0.5s; }
+        #gnb ul a:hover { background:#b9fb05; color:#333; }
+        #gnb>li.on ul { opacity:0.8; left:205px; top:-10px; }
+        #gnb li.on ul a { background:#444; opacity:0.7; } 
+
+        /* sns */
+        #sns{position:fixed;top:50px;right:30px;}
+        #sns li{float:left;margin-right: 40px;}
+        #sns .fa{font-size: 30px;opacity:0.5;color:greenyellow; transform:scale(1);transition:all 0.5s;}
+        #sns .fa:hover{opacity:1;transform: scale(1.5);}
+
+        /* 텍스트 박스 */
+        .txtBox { width:340px; height:280px; position:fixed; top:200px; right:70px; }
+        .txt { position:absolute; top:200px; right:0px; font-size:34px; font-family:play; color:#bbb; letter-spacing:-2px;}
+        .txt b { font:bold 34px arial; color:#b9fb05; 	margin-left:20px;}
+        .tit { position:absolute; top:0px; right:0px; font-size:160px; color:#b9fb05; font-family: 'Monoton', cursive; letter-spacing:-1px;}
+        .tit em { font-size:50px; font-family:play; color:#fff;}
+
+        /* contents 레이아웃 */
+        #side { width:800px; height:100%; position:fixed; bottom:0px; right:-800px; background:#111; opacity:0.5; transform:skewX(-40deg); transition:all 0.5s;}
+        #side:hover{right:-500px;}
+        #side .con { width:400px; height:100%; position:absolute; left:150px; bottom:0px; background:#000; 	box-sizing:border-box; padding:10px; transition:all  1s;}
+        #side:hover .con { left:50px;}
+
+        /* contents내 썸네일 */
+        #side .con p { width: 300px; height:100px; position:absolute; left:50px;}
+        #side .con p em { display:inline-block; font:bold 16px/1.7 arial; color:#a0bd50; transform:skewX(40deg);}
+        #side .con p img { width:300px; height:70px; opacity:0.3; transition:all 0.5s;}
+        #side .con p img:hover { opacity:1;}
+        #side .con p:nth-child(1) { bottom:270px; transform: translateX(200px); transition:all  0.4s;}
+        #side .con p:nth-child(2) { bottom:160px; transform: translateX(200px); transition:all  0.8s;}
+        #side .con p:nth-child(3) { bottom:50px; transform: translateX(200px); transition:all  1.2s;}
+        #side:hover .con p { transform:translateX(0px);}	
+
+        /* 자동롤링 버튼*/
+        #side .btnContents { width:150px; height:50px; position:absolute;  bottom:40px; left:100px; color:#b9fb05;	transform:skewX(40deg); }
+        #side:hover .btnContents { left:700px;}	
+        .btnContents i { font-size:60px; position:absolute; bottom:0px; right:0px; opacity:1;}
+        .btnContents i:nth-child(1){animation-name: ani;animation-duration: 1s;animation-iteration-count: infinite;animation-delay: 0s;}
+        .btnContents i:nth-child(2){animation-name: ani;animation-duration: 1s;animation-iteration-count: infinite;animation-delay: 0.4s;}
+        .btnContents i:nth-child(3){animation-name: ani;animation-duration: 1s;animation-iteration-count: infinite;animation-delay: 0.8s;}
+
+        @keyframes ani{from{right:0px; transform:scale(1);opacity:1;}
+                        to{right:100px; transform:scale(1.5);opacity:0;}}
+    </style>
+</head>
+<body>
+    <figure class="vid">
+        <video loop autoplay muted>
+            <source src="img/nike/nike.mp4" type="video/mp4">
+        </video>
+    </figure>
+
+    <!-- 로고 -->
+	<h1><img src="img/nike/logo2.png" /></h1>
+	
+	<!-- header -->
+	<header>		
+		<ul id="gnb">
+			<li class="on">
+                <a href="#"><em><i class="fa fa-refresh fa-spin"></i>About NIKE</em></a>	
+                <ul>
+					<li><a href="#"><em><b>English</b></em></a></li>				
+				</ul>			
+			</li>
+			<li>
+                <a href="#"><em>Brand Info</em></a>	
+                <ul>
+					<li><a href="#"><em>sub</em></a></li>
+					<li><a href="#"><em>sub</em></a></li>
+					<li><a href="#"><em>sub</em></a></li>
+					<li><a href="#"><em>sub</em></a></li>
+				</ul>					
+			</li>
+			<li>
+                <a href="#"><em> Community</em></a>
+                <ul>
+					<li><a href="#"><em>sub</em></a></li>
+					<li><a href="#"><em>sub</em></a></li>
+					<li><a href="#"><em>sub</em></a></li>		
+				</ul>				
+			</li>
+			<li>
+                <a href="#"><em>Product Value</em></a>
+                <ul>
+					<li><a href="#"><em>sub</em></a></li>
+					<li><a href="#"><em>sub</em></a></li>			
+				</ul>				
+			</li>
+			<li>				
+                <a href="#"><em>Company History</em></a>
+                <ul>
+					<li><a href="#"><em>sub</em></a></li>						
+				</ul>				
+			</li>	
+		</ul>
+    </header>
+
+    <!-- sns 버튼모음 -->
+	<ul id="sns">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+		<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+		<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+	</ul>
+    
+    <!-- 웹폰트 텍스트박스 -->
+	<section class="txtBox">
+		<p class="txt">Best Qualified<b>AIR MAX</b></p>
+		<p class="tit">50<em>/ 24</em></p>
+    </section>	
+    
+    <!-- 하단 컨텐츠박스 -->
+	<section id="side">
+		<div class="con">
+			<p>
+				<em>Event & Community</em>
+				<a href="#"><img src="img/nike/pic1.png" /></a>				
+			</p>
+			<p>
+				<em>News & Notice</em>
+				<a href="#"><img src="img/nike/pic2.png" /></a>				
+			</p>
+			<p>
+				<em>Product Review</em>
+				<a href="#"><img src="img/nike/pic3.png" /></a>				
+			</p>		
+        </div>		
+        <!-- 자동롤링 버튼 -->
+		<div class="btnContents">
+                <i class="fa fa-angle-double-left"></i>
+                <i class="fa fa-angle-double-left"></i>  
+                <i class="fa fa-angle-double-left"></i>
+            </div>
+	</section>
+</body>
+</html>

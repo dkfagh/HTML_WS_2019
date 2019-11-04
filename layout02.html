@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Layout02</title>
+    <style>
+        *{margin:0;padding:0;}
+        header{background: black;color:white;height:150px;padding:10px;}
+        nav{background:grey;height:30px;overflow: hidden;}
+        nav a{float:left;display:block;text-align:center;padding:5px 15px;color:white;
+                text-decoration: none;font-size:15px;}
+        nav a:hover, .dropdown:hover .dropbtn{background-color: #ccc;color:black;}
+        .dropdown{float:left; overflow: hidden;}
+        .dropdown .dropbtn{font-size: 15px;border: none;outline: none;color:white;
+                            padding:5px 15px;background-color: inherit;font-family: inherit;margin:0;}
+        .dropdown-content{display:none;position:absolute;background-color: #ddd;
+                            min-width: 95px;z-index: 1;}
+        .dropdown-content a{float:none;color: black;text-decoration: none;display: block;
+                                text-align: left;}
+        .dropdown-content a:hover{background-color: #ddd;color:black;}
+        .dropdown:hover .dropdown-content{display: block;}
+        aside{width:120px;
+               height:500px;
+               background:lightgray;
+               /* 줄바뀜 없이 붙여서 정렬 */
+               float:left;
+        }
+        section{float:left;padding:10px;}
+        footer{/* float따라가지말고 아래로 정렬 */
+                clear:both;
+                background:gray;
+                height:50px;
+                text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <!----------------------------- semantic태그 사용 -------------------------------------->
+    <header>
+        <h1>TIS정보기술교육센터</h1>
+    </header>
+    <nav>
+        <a href="#">회사 소개</a>
+        <a href="#">회사 연혁</a>
+        <div class="dropdown">
+            <div class="dropbtn">과정 소개
+                <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">Java</a>
+                    <a href="#">Design</a>
+                    <a href="#">Network</a>
+                </div>
+        </div>
+        <a href="#">Contact</a>
+    </nav>
+    <aside></aside>
+    <section>
+        <h3>회사 소개</h3>
+        TIS정보기술교육센터는 정부지원 IT전문교육기관입니다.
+    </section>
+    <footer>
+        &copy;TIS.EDU ALL rights reserved.
+    </footer>
+</body>
+</html>

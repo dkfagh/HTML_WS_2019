@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery04</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#wrap").before("before");
+            $("#wrap").after("after");
+            $("#wrap").append("append");
+            //$("#wrap").appendTo("appendTo");
+            $("#wrap").prepend("prepend");
+            var h1=$("#box1 h1").clone();
+            $("#box1").append(h1);
+            $("#box2").empty();
+            $("#box3").remove();
+            $("#box3").html("글자가 입력될까요?")
+        });
+    </script>
+    <style>
+        #wrap{background: green; width:300px; margin:auto;}
+        #wrap span{background: red;}
+    </style>
+</head>
+<body>
+    <!-- before -->
+    <div id="wrap">
+        <span>내용</span>
+    </div>
+    <!-- after -->
+
+    <div id="box1">
+        <h1>box1</h1>
+    </div>
+
+    <div id="box2">
+        지울거에요
+    </div>
+
+    <div id="box3">
+        없어질거에요
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript06</title>
+    <script>
+        function f1(){
+            var url="http://www.naver.com?query=자바스크립트";
+            location.href=encodeURI(url);//url을 인코딩해서 전송
+        }
+        
+        var a="100";
+        document.write(a+200,"<br>");
+        document.write(parseInt(a)+50,"<br>");
+        document.write(parseFloat(a),"<br>");
+
+        var b="abcd";
+        document.write(isNaN(b),"<br>");//숫자인지 아닌지 판단
+        var c="123";
+        document.write(isNaN(c),"<br>");
+
+        var code="document.write('테스트')";
+        eval(code);//문자형 데이터를 따옴표가 없는 자바스크립트 코드로 처리
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>introduce2</title>
+    <style>
+        #footer{position: fixed;bottom:0;width:100%;}
+        .ui-grid-a img{float:left;padding-right:10px;}
+        .ui-grid-a p{font-size: 15px;}
+        .title{color:blue;font-size: 16px;}
+        
+    </style>
+</head>
+<body>
+    <div data-role="page">
+
+        <div data-role="header">
+            <a href="index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
+            <a href="index.html" rel="external" data-icon="back" data-iconpos="notext" ui-btn-icon="right">Prev</a>
+            <h3>영화 소개</h3>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="introduce.html" rel="external">줄거리</a></li>
+                    <li><a href="introduce2.html" class="ui-btn-active" rel="external">등장인물</a></li>
+                    <li><a href="introduce3.html" rel="external">감상 포인트</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+        <div data-role="ui-content">
+            <h3>등장인물</h3>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/actor.jpg" alt="등장인물1">
+                    <div class="title">박지후</div>
+                    <p>주연<br>
+                    은희 역</p>
+
+                    <p>벌새,2018<br>
+                    나만 없는 집,2017</p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/actor2.jpg" alt="등장인물2">
+                    <div class="title">김새벽</div>
+                    <p>주연<br>
+                    영지 역</p>
+
+                    <p>킹메이커 : 선거판의 여우,2019<br>
+                    항거:유관순 이야기,2019</p>
+                </div>
+            </div><br>
+            <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <img src="img/actor3.jpg" alt="등장인물3">
+                        <div class="title">정인기</div>
+                        <p>조연<br>
+                        은희아빠 역</p>
+    
+                        <p>소리꾼,2019<br>
+                        담보,2019</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/actor4.jpg" alt="등장인물4">
+                        <div class="title">이승연</div>
+                        <p>조연<br>
+                        은희엄마 역</p>
+    
+                        <p>나들이,2018<br>
+                        벌새,2018</p>
+                    </div>
+                </div><br>
+            <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <img src="img/actor5.jpg" alt="등장인물5">
+                        <div class="title">박수연</div>
+                        <p>조연<br>
+                        수희 역</p>
+    
+                        <p>아버지가방에들어가신다!,2019<br>
+                        그 여름에 봄,2018</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/actor6.jpg" alt="등장인물6">
+                        <div class="title">손상연</div>
+                        <p>조연<br>
+                        대훈 역</p>
+    
+                        <p>어제 일은 모두 괜찮아,2019<br>
+                        벌새,2018</p>
+                    </div>
+                </div>
+        </div>
+        <div data-role="footer" id="footer">
+            <h3>&copy;CGV. All rights reserved.</h3>
+        </div>
+
+    </div>
+</body>
+</html>

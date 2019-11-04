@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hotTopic</title>
+    <style>
+        *{padding:0;margin:0;}
+        body{background-color: #ddd;width:780px;margin:auto;}
+        header{padding:20px;}
+        nav{width:780px;height:30px;line-height:30px;background-image:url("img/simple/menu.jpg");}
+        ul, li{list-style: none;}
+        nav a{float: left;display:block;text-align:center;padding:0 10px; color:white;font-size: 13px;}
+        nav a:hover{color:black;}
+        a{text-decoration: none;}
+        section{position:relative;width:780px;margin:auto;}
+        .container{position:relative;width:48%;height:100%;float:left;box-sizing: border-box;margin:10px 5px;overflow: hidden;}
+        .image{display:block; width:100%;height:auto;}
+        .title{position:absolute;bottom:0;width:100%;height:40%;text-align:center;overflow: hidden;background-color: slategray;opacity: 0.9;transition: 0.5s;}
+        .subtitle{position:absolute;width:100%;bottom:-100%;overflow: hidden;transition: 0.6s;}
+        .subtitle p{width:100%;color:white;text-align: center;font-size: 14px;}
+        .subtitle a:link{color:white;text-decoration: none;}
+        .subtitle a:visited{color:white;text-decoration: none;}
+        .subtitle a:hover{color:white;border-bottom: solid white 1px;}
+        .text{width:100%;top:40%;margin:auto;color:white;font-size: 16px;position: absolute;overflow: hidden;margin:auto;}
+        .container:hover .title{height:100%;}
+        .container:hover .text{opacity:0;}
+        .container:hover .subtitle{bottom:20%;}
+        footer{width:780px;height:30px;line-height:30px;clear:both;font-size:12px;background-image: url("img/simple/footer.jpg");text-align: center;;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>블로그 핫토픽</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">블로그 홈</a></li>
+            <li><a href="#">주제별 보기</a></li>
+            <li><a href="#">이달의 블로그</a></li>
+            <li><a href="#">공식블로그</a></li>
+            <li><a href="#">파워블로그</a></li>
+            <li><a href="#">챌린지 프로그램</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="container">
+            <img src="img/simple/spring.jpg" alt="spring" class="image">
+            <div class="title">
+                <div class="text">따뜻한 봄이 왔다.</div>
+            </div>
+            <div class="subtitle">
+                <p><img src="img/simple/icon_spring.png" alt="spring_icon" class="icon"></p>
+                <p><a href="https://namu.wiki/w/봄" target="_blank">Spring</a></p><br>
+                <p>따뜻한 봄이 왔다. 새들은 즐겁게 아침을 노래하고 시냇물은 부드럽게 속삭이며 흐른다. 아늑한 봄의 분위기 속에 노래가 시작된다.</p>
+            </div>
+        </div>
+        <div class="container">
+            <img src="img/simple/summer.jpg" alt="summer" class="image">
+            <div class="title">
+                <div class="text">뜨거운 태양 아래 사람도 양도 모두 지쳐버린다.</div>
+            </div>
+            <div class="subtitle">
+                <p><img src="img/simple/icon_summer.png" alt="summer_icon" class="icon"></p>
+                <p><a href="https://namu.wiki/w/여름" target="_blank">Summer</a></p><br>
+                <p>뜨거운 여름이 다가오면 타는 듯 뜨거운 태양 아래 사람도 양도 모두 지쳐버린다. 느닷없이 북풍이 휘몰아치고 둘레는 불안에 휩싸인다.</p>
+            </div>
+        </div>
+        <div class="container">
+            <img src="img/simple/autumn.jpg" alt="autumn" class="image">
+            <div class="title">
+                <div class="text">농부들이 풍성한 수확의 기쁨을 나눈다.</div>
+            </div>
+            <div class="subtitle">
+                <p><img src="img/simple/icon_autumn.png" alt="autumn_icon" class="icon"></p>
+                <p><a href="https://namu.wiki/w/가을" target="_blank">Autumn</a></p><br>
+                <p>농부들이 풍성한 수확의 기쁨을 나누며 술과 춤 잔치를 벌인다.</p>
+            </div>
+        </div>
+        <div class="container">
+            <img src="img/simple/winter.jpg" alt="winter" class="image">
+            <div class="title">
+                <div class="text">따뜻한 옷을 입으면서 시원한 음식을 먹는다.</div>
+            </div>
+            <div class="subtitle">
+                <p><img src="img/simple/icon_winter.png" alt="winter_icon" class="icon"></p>
+                <p><a href="https://namu.wiki/w/겨울" target="_blank">Winter</a></p><br>
+                <p>얼어붙을 듯이 차가운 겨울. 산과 들은 눈으로 뒤덮이고 바람은 나뭇가지를 잡아 흔든다. 이빨이 딱딱 부딪칠 정도로 추위가 극심하며 따뜻한 옷을 입으면서 시원한 음식을 먹는다.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <P>Copyright &copy; <a href="http://www.navercorp.com">NAVER Corp.</a> All Rights Reserved.</P>
+        </div>
+    </footer>
+</body>
+</html>

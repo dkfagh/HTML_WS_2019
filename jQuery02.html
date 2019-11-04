@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery01</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tit").css("background-color","#ff0")
+            .css("border","2px solid #f00");
+
+            $(".tit").css("background-color","bisque")
+            .css("border","2px dotted blue");
+
+            $("h1").css("color","olive");
+
+            $("#inner_1").find(".txt1").css("background","olive");
+            //$("#inner_1 .txt1").css("background","olive");  //find선택자와 결과가 같다
+
+            console.log($("#sec_1").html());
+            console.log($("#sec_1").text());
+
+            //$("#sec_1").html("<h6>jQuery</h6>");  //태그, 문자 모두 처리
+            $("#sec_1").text("<h6>jQuery</h6>");  //태그도 문자로 출력
+
+            console.log($("#img01").attr("src"));  //getter
+            $("#img01").attr("src","img/img01.jpg");  //setter
+            //$("#img01").removeAttr("src");  //src 속성 자체를 없앰
+
+            console.log($("#name").val());  //getter
+            $("#name").val("이순신");  //setter
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h2 id="tit">선택자</h2>
+    <h3 class="tit">직접 선택자</h3>
+
+    <section id="inner_1">
+        <p class="txt1">내용1</p>
+        <p class="txt1">내용2</p>
+        <div>
+            <p class="txt1">내용3</p>
+        </div>
+
+        <section id="sec_1">
+            <h2>section</h2>
+        </section>
+
+        <img id="img01" src="img/coffee.jpg" width="300" height="200"><br>
+
+        <input type="text" id="name" value="홍길동">
+    </section>
+</body>
+</html>

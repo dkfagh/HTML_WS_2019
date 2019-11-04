@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>imageSprite</title>
+    <style>
+        #box1{width:134px;height:44px;
+                /* background는 자동반복 */
+                background: url("img/img_navsprites.gif");}
+        #box2{width:46px;height:44px;background: url("img/img_navsprites.gif");}
+                /* background를 왼쪽으로 이동시킨 후 width 지정 */
+        #box3{width:43px;height:44px;background: url("img/img_navsprites.gif") -47px 0;}
+        #box4{width:43px;height:44px;background: url("img/img_navsprites.gif") -91px 0;}
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20191028</title>
+    <script>
+        // Q.00
+        // var sonata={
+        //     color:"black",
+        //     price:40000000,
+        //     year:2019
+        // };
+
+        // document.write(sonata.color,"<br>");
+        // document.write(sonata.price,"<br>");
+        // document.write(sonata.year,"<br>");
+
+
+        // Q.01
+        // var result = new Array();
+
+        // var input1 = prompt("국어점수를 입력하세요.","");
+        // result[0]=input1;
+        // var input2 = prompt("수학점수를 입력하세요.","");
+        // result[1]=input2;
+        // var input3 = prompt("영어점수를 입력하세요.","");
+        // result[2]=input3;
+
+        // Q.02
+        // for(i in result){
+        //     document.write(result[i],"<br>")
+        // }
+
+        // Q.03
+        // var total = 0;
+        // for(i in result){
+        //     total+=Number(result[i]);
+        // }
+        // document.write(total/result.length,"<br>")
+
+        // Q.04
+        // function multiple(a,b){
+        //     return a*b;
+        // }
+        // document.write(multiple(3,4),"<br>");
+
+        // Q.05
+        // var id="hongkildong";
+        // document.write(id.length,"<br>");
+
+        // Q.06
+        // var id="920616-1111111";
+        // document.write(id.substring(0,6),"<br>");
+
+        // Q.07
+        // var number="010-1234-5678";
+        // var arr = number.split("-");
+
+        // for(i in arr){
+        //     document.write(arr[i],"<br>");
+        // }
+
+        // Q.08
+        // var number="010-1234-5678";
+        // var arr = number.split("-");
+
+        // var str="";
+        // for(var i=0;i<arr.length;i++){
+        //     str+=arr[i]
+        // }
+        // document.write(str,"<br>");
+
+        // Q.09
+        // var id = prompt("id를 입력하세요.","");
+        // var pw = prompt("pw를 입력하세요.","");
+        // var name = prompt("이름을 입력하세요.","");
+
+        // var str = id.concat(",",pw,",",name);
+        // document.write(str,"<br>");
+
+        // var arr = str.split(",");
+        // for(i in arr){
+        //     document.write(arr[i],"<br>");
+        // }
+
+        // Q.10
+        // function grade(){
+        //     if(avg >= 90){return "A"}
+        //     else if(avg >= 80){return "B"}
+        //     else if(avg >= 70){return "C"}
+        //     else if(avg >= 60){return "D"}
+        //     else {return "F"}
+        // }
+
+        var student = {
+            name:"홍길동",
+            kor:85,
+            eng:90,
+            math:95,
+            grade:function(){
+            if((this.kor+this.eng+this.math)/3 >= 90){return "A"}
+            else if((this.kor+this.eng+this.math)/3 >= 80){return "B"}
+            else if((this.kor+this.eng+this.math)/3 >= 70){return "C"}
+            else if((this.kor+this.eng+this.math)/3 >= 60){return "D"}
+            else {return "F"}
+        }
+        };
+        
+        document.write(student.name+" : "+student.grade()+"학점"+"<br>");
+
+        // Q.12
+        // var today = new Date();
+        // nowHour = today.getHours();
+
+        // if(nowHour<19){
+        //     location.href="https://www.naver.com";
+        // } else {
+        //     location.href="https://www.google.com";
+        // }
+
+    </script>
+    <!-- // Q.11 -->
+    <!-- <script type="text/javascript">
+        var agent = navigator.userAgent.toLowerCase();
+
+        if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+        alert("IE를 지원하지 않습니다.");
+        } else {
+            location.href="https://www.google.com";
+        }
+     </script> -->
+</head>
+<body>
+    <!-- Q.13
+    <input type="text" id="keyword"></body>input >>
+    <input type="button" value="검색" onclick="search()">
+    <script>
+        function search() {
+            var keyword=document.getElementById("keyword").value;
+            console.log(keyword);
+            location.href="https://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query="+keyword;
+        }
+    </script> -->
+</body>
+</html>

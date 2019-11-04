@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript03</title>
+    <script>   
+        document.write("<h3>배열-객체</h3>","<br>")
+        var data=[{id:"hkd",name:"홍길동"},
+                    {id:"lss",name:"이순신"}];
+        document.write(data[0],"<br>");
+        document.write(data[1],"<br>");
+        document.write(data[0].id,"<br>");
+        document.write(data[0].name,"<br>");
+        document.write(data[1].id,"<br>");
+        document.write(data[1].name,"<br>");
+
+        for(i in data){
+            document.write(data[i].id,"<br>");
+            document.write(data[i].name,"<br>");
+        }
+
+
+        document.write("<h3>객체-배열</h3>","<br>")
+        var data2={
+            id:"hkd",
+            name:"홍길동",
+            score:[90.5,95.5]
+        };
+
+        document.write(data2.id,"<br>");
+        document.write(data2.name,"<br>");
+        document.write(data2.score[0],"<br>");
+        document.write(data2.score[1],"<br>");
+
+        document.write(data2["id"],"<br>");
+        document.write(data2["name"],"<br>");
+        document.write(data2["score"],"<br>");
+        document.write(data2.score[0],"<br>");
+        document.write(data2.score[1],"<br>");
+
+        for(var i = 0; i<data2.score.length;i++){
+            document.write(data2.score[i],"<br>");
+        }
+
+        // 속성값 출력
+        for(var key in data2) {
+            document.write(key,"<br>");
+            document.write(data2[key],"<br>");
+        }
+
+
+        document.write("<h3>객체-배열-객체</h3>","<br>")
+        var data3 = {
+            id:"hkd",
+            name:"홍길동",
+            subject:[{sID:"electronics",sName:"전자공학"},
+                        {sID:"korean",sName:"국어국문학"}]
+        };
+
+        document.write(data3.id,"<br>");
+        document.write(data3.name,"<br>");
+        document.write(data3.subject,"<br>");
+        document.write(data3.subject[0],"<br>");
+        document.write(data3.subject[0].sID,"<br>");
+        document.write(data3.subject[0].sName,"<br>");
+        document.write(data3.subject[1],"<br>");
+        document.write(data3.subject[1].sID,"<br>");
+        document.write(data3.subject[1].sName,"<br>");
+
+        for(var i=0;i<data3.subject.length;i++){
+            document.write(data3.subject[i].sID,"<br>");
+            document.write(data3.subject[i].sName,"<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

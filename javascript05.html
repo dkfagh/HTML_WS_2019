@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript05</title>
+    <script>
+        //Global-Local
+        var num=0;
+        function f1(){
+            num++;
+            console.log(num+"<br>");
+        }
+        function f2(){
+            num--;
+            console.log(num+"<br>");
+        }
+
+        function myFnc(){
+            var a=100;
+            function myFnc2(){
+                console.log(a);
+            }
+            myFnc2();
+        }
+        myFnc();
+
+        //익명함수 즉시 실행
+        (function(){
+            var num=100;
+            console.log("num : "+num);
+        })();
+
+
+        document.write("안녕하세요","<br>");
+        console.log("안녕하세요","<br>");
+        document.write("반갑습니다"+"<br>");
+        console.log("반갑습니다"+"<br>");
+    </script>
+</head>
+<body>
+    <button type="button" onclick="f1()">증가</button>
+    <button type="button" onclick="f2()">감소</button>
+</body>
+</html>

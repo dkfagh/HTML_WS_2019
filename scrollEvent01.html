@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>scrollEvent</title>
+    <script>
+        $(document).ready(function(){
+            $(window).on("scroll",function(){
+                var sc_top=$(this).scrollTop();  //$(this)는 window를 가리킴(이벤트가 발생한 것)
+                $("h1>span").text(sc_top);
+            });
+        });
+    </script>
+    <style>
+        #wrap{height:10000px;}
+        h1{position:fixed;top:0;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+    <h1>ScrollTop : <span>0</span></h1>
+    </div>
+</body>
+</html>

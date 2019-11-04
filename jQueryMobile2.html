@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>jQueryMobile2</title>
+</head>
+<body>
+    <!-- 체크박스 -->
+    <form>
+            <label for="autoLogin">자동로그인</label>
+                <input id="autoLogin" type="checkbox" name="checkbox-0 ">
+            
+    </form>
+
+    <!-- radio button -->
+    <form>
+            <label>
+                <input type="radio" name="radio-choice-0" id="radio-choice-0a">One
+            </label>
+            <label for="radio-choice-0b">Two</label>
+            <input type="radio" name="radio-choice-0" id="radio-choice-0b" class="custom">
+    </form>
+
+    <!-- collaqsible -->
+        <div data-role="collapsible">
+                    <h4>공지사항</h4>
+                    <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+        </div>
+
+    <!-- Grid -->
+    <div class="ui-grid-a">
+                <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
+    </div><!-- /grid-a -->
+
+    <div class="ui-grid-b">
+                <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
+                <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
+    </div><!-- /grid-a -->
+
+
+    <!-- listView -->
+    <ul data-role="listview" data-inset="true">
+                <li>Acura</li>
+                <li>Audi</li>
+                <li>BMW</li>
+                <li>Cadillac</li>
+                <li>Ferrari</li>
+    </ul>
+
+    <ul data-role="listview">
+                <li><a href="#">Acura</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">BMW</a></li>
+                <li><a href="#">Cadillac</a></li>
+                <li><a href="#">Ferrari</a></li>
+    </ul>
+</body>
+</html>

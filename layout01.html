@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout</title>
+    <style>
+        *{margin:0;padding:0;}
+        #header{background: black;
+                color:white;
+                height:150px;
+                padding:10px;}
+        #nav{background:grey;
+             height:30px;
+        }
+        #aside{width:120px;
+               height:500px;
+               background:lightgray;
+               /* 줄바뀜 없이 붙여서 정렬 */
+               float:left;
+        }
+        #section{float:left;
+                 padding:10px;                 
+        }
+        #footer{
+                /* float따라가지말고 아래로 정렬 */
+                clear:both;
+                background:gray;
+                height:50px;
+                text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>TIS정보기술교육센터</h1>
+    </div>
+    <div id="nav">
+        회사 소개  |  회사 연혁  |  과정 소개  |  Contact
+    </div>
+    <div id="aside"></div>
+    <div id="section">
+        <h3>회사 소개</h3>
+        TIS정보기술교육센터는 정부지원 IT전문교육기관입니다.
+    </div>
+    <div id="footer">
+        &copy;TIS.EDU ALL rights reserved.
+    </div>
+</body>
+</html>

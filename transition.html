@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+    <style>
+        #box1{background-color: red;width:200px;height:200px;transition: 4s;position:relative;
+                left:0px;}
+        #box1:hover{width:500px;height:500px;background-color: blue;left:500px;}
+        /* 사라지는 애니메이션 효과 => opacity 이용 */
+        #box2{width:100px;height:100px;background: yellow;display: block;transition:4s;}
+        #box2:hover{opacity:0;}
+        #box3{width:300px;height:300px;background: cornflowerblue;
+                transform: rotate(20deg);transition:1s;}
+        #box3:hover{transform: rotate(28060deg);}
+        #box4{width:100px;height:100px;background: darkolivegreen;transform: translateY(50px);}
+        #box5{width:100px;height:100px;background: darkcyan;transform:scale(1);transition: 1s;}
+        #box5:hover{transform:scaleX(1.2);}
+        #box6{width:400px;height:400px;background: darkorchid;transition: 2s;}
+        #box6:hover{transform: skew(40deg, 20deg);}
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+    <div id="box6"></div>
+</body>
+</html>

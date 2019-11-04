@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title> 회원 가입 </title>
+    <!--[if lt IE 8]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+	<![endif]-->
+	
+	<!--[if lt IE 7]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+    <![endif]-->
+    
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+    <script>
+        function check(){
+            if(document.joinForm.id.value==""){
+                alert("ID를 입력하세요");
+                document.joinForm.id.focus();//해당 이름의 필드로 커서 이동
+                return;
+            }
+            if(document.joinForm.password.value==""){
+                alert("PW를 입력하세요");
+                document.joinForm.password.focus();
+                return;
+            }
+            if(document.joinForm.name.value==""){
+                alert("이름을 입력하세요");
+                document.joinForm.name.focus();
+                return;
+            }
+            if(document.joinForm.email.value==""){
+                alert("e-mail을 입력하세요");
+                document.joinForm.email.focus();
+                return;
+            }
+            var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//이메일 정규식
+ 
+            if(!emailRule.test(document.joinForm.email.value)) {   
+                    alert("e-mail형식이 올바르지 않습니다");  
+                    // document.joinForm.email.focus();  //입력하는 경우
+                    document.joinForm.email.select();  //수정하는 경우
+                    return;
+            }
+            // 폼 전송
+            document.joinForm.submit();
+        }
+
+        $(document).ready(function(){
+            $("#introduce").on("keypress",function(e){
+                console.log($(this).val());
+                if($(this).val().length>150){
+                   e.preventDefault();
+                    alert("150자 초과!");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <h1> 회원 가입 </h1>
+    <!----------------------- method="get" or "post" -------------------------->
+    <form name=joinForm action="join.jsp" method="post">
+        <!---------- required : 필수 입력 사항 ---------->
+        <!---- placeholder="~" : 텍스트필드에 데이터가 입력되기 전까지 출력되는 값 ---->
+        id <input type="text" name="id" placeholder="ID를 입력하세요."><br/>
+        pw <input type="password" name="password" placeholder="PW를 입력하세요."><br/>
+        name <input type="text" name="name"><br/>
+        email <input type="email" name="email"><br/>
+        address <input type="text" name="address"><br/>
+        <!------- radio : 이름을 같게 해주면 같은 그룹 내에서 선택 ------->
+        gender <input type="radio" name="gender" value="male">male
+                <input type="radio" name="gender" value="female">female<br/>
+        email Receiving <input type="radio" name="emailReceive" value="Y">Yes
+                    <input type="radio" name="emailReceive" value="N">No<br/>
+        <!--------------------- 이름이 같으면 배열로 처리 ---------------------->
+        <!-------------- checkbox 이름을 다르게, 다중 선택 가능 ---------------->
+        hobby <input type="checkbox" name="hobby1" value="reading">reading
+                <input type="checkbox" name="hobby2" value="watching">watching
+                <input type="checkbox" name="hobby3" value="exercise">exercise
+                <input type="checkbox" name="hobby4" value="coding">coding<br/>
+        <!------------- 콤보박스 select ~ option --------------->
+        job <select name="job">
+                <option value="student">student</option>
+                <option value="army">army</option>
+                <option value="teacher">teacher</option>
+                <option value="actor">actor</option>
+            </select><br/>
+        <!--------------- textarea 행 : rows / 열 : cols ------------->
+        introduce <textarea id="introduce" name="introduce" rows="10" cols="50"></textarea><br/>
+        <!-------------------- 파일 불러오기 ----------------------->
+        photo <input type="file" name="photo"><br/>
+        <!-- <input type="submit" value="submit"><br/> -->
+        <input type="button" value="submit" onclick="check()"><br/>
+        <!-- <input type="image" src="img/submit.png"><br/>
+        <button>submit</button>
+        <button type="button">submit</button> -->
+    </form>
+</body>
+</html>

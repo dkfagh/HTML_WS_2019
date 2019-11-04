@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 회원 가입 </title>
+    <script>
+        function check(){
+            if(document.joinForm.id.value==""){
+                alert("ID를 입력하세요");
+                document.joinForm.id.focus();//해당 이름의 필드로 커서 이동
+                return false;
+            }
+            if(document.joinForm.password.value==""){
+                alert("PW를 입력하세요");
+                document.joinForm.password.focus();
+                return false;
+            }
+            if(document.joinForm.name.value==""){
+                alert("이름을 입력하세요");
+                document.joinForm.name.focus();
+                return false;
+            }
+            if(document.joinForm.email.value==""){
+                alert("e-mail을 입력하세요");
+                document.joinForm.email.focus();
+                return false;
+            }
+            var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//이메일 정규식
+ 
+            if(!emailRule.test(document.joinForm.email.value)) {   
+                    alert("e-mail형식이 올바르지 않습니다");  
+                    document.joinForm.email.focus();       
+                    return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1> 회원 가입 </h1>
+    <form name="joinForm" action="join.jsp" method="post" onsubmit="return check();">
+        id <input type="text" name="id"><br/>
+        pw <input type="password" name="password"><br/>
+        name <input type="text" name="name"><br/>
+        email <input type="text" name="email"><br/>
+        address <input type="text" name="address"><br/>
+        gender <input type="radio" name="gender" value="male">male
+                <input type="radio" name="gender" value="female">female<br/>
+        email Receiving <input type="radio" name="emailReceive" value="Y">Yes
+                    <input type="radio" name="emailReceive" value="N">No<br/>
+        <!--------------------- 이름이 같으면 배열로 처리 ---------------------->
+        hobby <input type="checkbox" name="hobby1" value="reading">reading
+                <input type="checkbox" name="hobby2" value="watching">watching
+                <input type="checkbox" name="hobby3" value="exercise">exercise
+                <input type="checkbox" name="hobby4" value="coding">coding<br/>
+        job <select name="job">
+                <option value="student">student</option>
+                <option value="army">army</option>
+                <option value="teacher">teacher</option>
+                <option value="actor">actor</option>
+            </select><br/>
+        introduce
+        <textarea name="introduce" rows="10" cols="50"></textarea><br/>
+        photo<br/>
+        <input type="file" name="photo">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

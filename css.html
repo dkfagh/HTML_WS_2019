@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS</title>
+    <!---------------- style로 구현 ------------------->
+    <Style>
+        /* padding:공간의 안쪽 여백 / margine:공간의 바깥쪽 여백 => 여백을 따로 설정해줘야하는 단점*/
+        /* 기본 코드 (여백:0) */
+        *{padding:0;margin:0;}
+        /* 태그명 */
+        h1 {color:rgb(25, 173, 231);font-size:80px;}
+        P {color:green;}
+        /* 클래스 */
+        .para {color:yellowgreen;}
+        /* ID */
+        #para1 {color:red;}
+        /* 선택적 적용(태그 하위의 클래스가 .center인것)) */
+        h1.center {color:orange;}
+        /* 자손 선택자 */
+        p i{color:aqua;}
+        /* 두개의 클래스에 동시 적용 */
+        .c1{color:blueviolet;}
+        .c2{background:chocolate;}
+        /* 그룹 선택자 */
+        h1,h2,p {text-align:center;}
+        /* 자식 선택자 */
+        p>i{color:darkcyan;}
+        div>span>i{color:tomato;}
+        /* 형제 선택자 */
+        div~ul{background:teal;}
+    </Style>
+</head>
+<body>
+    <h1>CSS3</h1>
+    <h2>CSS3</h2>
+    <h3>CSS3</h3>
+
+    <h1>Cascading Style Sheets</h1>
+
+    <p id="para1">CSS is stands for Cascading Style Sheets</p>
+
+    <p>CSS is stands for Cascading Style Sheets</p>
+
+    <p class="para">CSS is stands for Cascading Style Sheets</p>
+
+    <p class="para">CSS is stands for Cascading Style Sheets</p>
+
+    <p class="para">CSS is stands for Cascading Style Sheets</p>
+
+    <!-- 공백으로 클래스 두개 설정 가능 -->
+    <p class="c1 c2">CSS is stands for Cascading Style Sheets</p>
+
+    <p>CSS is stands for Cascading Style Sheets</p>
+
+    <p class="center">CSS is stands for Cascading Style Sheets</p>
+
+    <p>CSS is stands for Cascading Style Sheets</p>
+
+    <h1 class="center">test</h1>
+
+    <p>
+        <i>test</i>
+        <i>test</i>
+        <i>test</i>
+        <span>
+            <i>test</i>
+        </span>
+    </p>
+    <i>test</i>
+    <i>test</i>
+
+    <div>
+        <span>
+            <i>test</i>
+        </span>
+    </div>
+    <div>
+        www
+    </div>
+    <div>drinks</div>
+    <ul>
+        <li>milk</li>
+        <li>tea</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>jQueryPlugIn</title>
+    <script>
+        // $(function(){});  <-- 약식 코딩
+        $(document).ready(function(){
+            //open이라는 함수를 확장 등록(extend)
+            $.fn.open=function(eventType,message){
+                var ts=$(this);
+                $.each(ts,function(i,o){
+                    $(o).on(eventType,function(){
+                        alert(message);
+                    });
+                })
+            };
+
+            //플러그인 사용
+            $(".btn01").open("mouseover", "welcome!");
+            $(".btn02").open("click","hello!");
+        });
+    </script>
+</head>
+<body>
+    <p><button class="btn01">버튼01</button></p>
+    <p><button class="btn02">버튼02</button></p>
+    <p><button class="btn03">버튼03</button></p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alert</title>
+    <script>
+        alert("삭제되었습니다."); // window 생략 가능
+        window.alert("alert()는 window객체에 구현되어 있습니다.");
+
+        var name = prompt("id를 입력하세요.","");
+        document.write(name,"<br>");
+
+        if(confirm("삭제하시겠습니까?")){
+            // 삭제처리
+            alert("삭제되었습니다.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript01</title>
+    <script>
+        var a=10;
+        var b=20;
+        var result=(a>b)?"a가 b보다 크다.":"b가 a보다 크다.";
+
+        document.write(result+"<br>");
+        console.log(result); //debugging용(chrome 개발자도구(F12) -> console)
+
+
+        c=100;
+        d=200;
+        document.write(c+d+"<br>");
+
+        var html ="<ul>";
+            html+="<li>javascript</li>";
+            html+="<li>jQeury</li>";
+            html+="</ul>";
+        document.write(html);
+
+
+        var num=prompt("당신이 좋아하는 숫자는?","");
+
+        if(num%2==0){
+            document.write("당신이 좋아하는 숫자는 짝수입니다."+"<br>");
+        } else {
+            document.write("당신이 좋아하는 숫자는 홀수입니다."+"<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

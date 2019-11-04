@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <title>addClass02</title>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#box1").addClass("on");
+            });
+            $("#btn2").click(function(){
+                $("#box1").removeClass("on");
+            });
+
+            $("#btn3").click(function(){
+                $("#box2").toggleClass("on");
+            });
+
+            $("#btn4").click(function(){
+                $("#box3").toggleClass("slideOutRight animated");
+            });
+        });
+    </script>
+    <style>
+        #box1{position:relative; width:100px; height:100px; background: red; transition: 1s;}
+        #box1.on{width:1000px; height:20px; background: plum;}
+
+        #box2{opacity:0;transition:0.5s;}
+        #box2.on{opacity:1;}
+    </style>
+</head>
+<body>
+    <div id="box1">
+        box1
+    </div>
+    <button type="button" id="btn1">Add</button>
+    <button type="button" id="btn2">Remove</button>
+    <button type="button" id="btn3">공지사항01</button>
+    <div id="box2">jQuery는 재미있습니다.</div>
+    <button type="button" id="btn4">공지사항02</button>
+    <div id="box3">jQuery는 재미있습니다.</div>
+</body>
+</html>

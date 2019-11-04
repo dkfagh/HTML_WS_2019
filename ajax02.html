@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>ajax02</title>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url:"data.xml",
+                dataType:"xml",
+                success:function(data){
+                    var tb=$("<table/>");
+                    var productArray=$(data).find("product");
+                    $.each(productArray, function(i,v){
+                        var name=$(v).find("name").text();
+                        var price=$(v).find("price").text();
+                        //행에 컬럼추가
+                        var row=$("<tr/>").append(
+                            $("<td/>").text(name),
+                            $("<td/>").text(price)
+                        );
+                        tb.append(row);//테이블에 행 추가
+                    });
+
+                    $("#drink").append(tb);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="drink"></div>
+</body>
+</html>
