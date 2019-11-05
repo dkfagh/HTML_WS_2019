@@ -28,7 +28,7 @@ mysqli_select_db($connect,$mysql_database) or die('DB 선택 실패');
 mysqli_query($connect, ' SET NAMES '.$mysql_charset);
 
 //4. 쿼리 생성
-$query = 'select keyword from search where keyword like \''.$q.'%\'';
+$query = 'select keyword from search where keyword like \'%'.$q.'%\'';
 
 //5. 쿼리 실행
 $result = mysqli_query($connect, $query);

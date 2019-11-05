@@ -4,6 +4,7 @@
     <meta charset="utf-8">
 <style>
     li{list-style: none;}    
+    input{width:300px;}
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script>
@@ -19,21 +20,20 @@ function showHint(str) {
         document.getElementById("txtHint").innerHTML = "";  //입력된 검색어가 없을때 초기화
         return;
     } else {
+            var href="http://dkfagh.dothome.co.kr/suggestionJson_post.php?callback=myFnc&q="+encodeURI(str);
             var output="<ul>";
-            var href="http://dkfagh.dothome.co.kr/suggestionJson_post.php?callback=myFnc"+encodeURI(str);
         
             $.ajax({
                 url:href,
                 dataType:"jsonp"
             }).done(function myFnc(data){
-                console.log("test");
-
+                console.log(data);
                 $.each(data,function(key,value){
-                    
+                    // console.log(data);
                     keyword=value.address;
-                    console.log(address);
+                    // console.log(keyword);
                     number=value.zipcode;
-                    console.log(zipcode);
+                    // console.log(number);
 
                     output+="<li><a href='#' onClick='setKeyword(\""+keyword+"\")'>"+keyword+"</a></li>";  //검색어를 선택하면 txtHint에 텍스트를 출력하고 suggestion목록을 숨김
                 });

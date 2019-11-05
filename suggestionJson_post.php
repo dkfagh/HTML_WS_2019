@@ -27,7 +27,7 @@ mysqli_select_db($connect,$mysql_database) or die('DB 선택 실패');
 mysqli_query($connect, ' SET NAMES '.$mysql_charset);
 
 //4. 쿼리 생성
-$query = 'select address from post where address like \''.$q.'%\'';
+$query = 'select address,zipcode from post where address like \'%'.$q.'%\'';
 
 //5. 쿼리 실행
 $result = mysqli_query($connect, $query);
@@ -43,7 +43,7 @@ while($row = mysqli_fetch_array($result))
         $output.= ",";//콤마붙이기    .=는 +=와 같다(php 문자열 연결)
     }
 
-    $output.='{"address":"'.$row['address'].'"}';  
+    $output.='{"address":"'.$row['address'].'"},{"zipcode":"'.$row['zipcode'].'"}';  
    
 }
 $output='['.$output.']';

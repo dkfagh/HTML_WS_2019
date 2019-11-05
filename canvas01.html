@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas01</title>
+    <script>
+        window.onload=function(){
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            // 사각형
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(100,100,150,75);  // 시작점,끝점,가로,세로
+            // 직선
+            ctx.strokeStyle = "#00FF00";
+            ctx.moveTo(0, 0);   // 시작점
+            ctx.lineTo(100, 100);   // 끝점
+            ctx.stroke();                        // stroke는 테두리만, fill은 채우기
+            // 원
+            ctx.fillStyle="#0000FF";
+            ctx.beginPath();
+            ctx.arc(55, 55, 40, 0, 2 * Math.PI);   // x좌표, y좌표, 반지름, 시작각(3시방향에서 시작, 시계방향으로), 끝각
+            ctx.fill();
+            // 그라데이션
+            // Create gradient
+            var grd = ctx.createLinearGradient(0, 0, 200, 0);
+            grd.addColorStop(0, "red");
+            grd.addColorStop(1, "white");
+            // Fill with gradient
+            ctx.fillStyle = grd;
+            ctx.fillRect(10, 300, 150, 80);
+            // 텍스트
+            ctx.fillStyle="#FFFF00";
+            ctx.font = "30px Arial";
+            ctx.fillText("Hello World", 10, 250);   // 출력할 텍스트, x좌표, y좌표 (x,y좌표는 텍스트의 좌하점 기준)
+            // 이미지
+            var img=new Image();
+            img.onload=function(){      
+            ctx.drawImage(img,50,50);   
+            }
+            img.src="img/button_3.png";
+    </script>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="400" style="border:1px solid black;"></canvas>
+</body>
+</html>

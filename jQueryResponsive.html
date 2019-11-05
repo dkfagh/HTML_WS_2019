@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>jQueryResponsive</title>
+    <style>
+        #news1, #news2,#product1,#product2{width:50%;height:300px;float: left;}
+        #news1{background: coral;}
+        #news2{background: cornflowerblue;}
+        #product1{background:darkolivegreen;}
+        #product2{background: darkorange;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(window).resize(function(){
+                var width=$(window).width();
+                if(width>=992){
+                    $("#news1").css("width","50%");
+                    $("#news2").css("width","50%");
+                    $("#product1").css("width","50%");
+                    $("#product2").css("width","50%");
+                }
+                else if(width>=768 && width<992){
+                    $("#news1").css("width","100%");
+                    $("#news2").css("width","100%");
+                    $("#product1").css("width","50%");
+                    $("#product2").css("width","50%");
+                }else if(width<768){
+                    $("#news1").css("width","100%");
+                    $("#news2").css("width","100%");
+                    $("#product1").css("width","100%");
+                    $("#product2").css("width","100%");
+                }   
+            });
+            //$(window).resize();
+            $(window).trigger("resize");  //강제호출
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <div id="news">
+            <div id="news1"></div>
+            <div id="news2"></div>
+        </div>
+        <div id="products">
+            <div id="product1"></div>
+            <div id="product2"></div>
+        </div>
+    </div>
+</body>
+</html>
