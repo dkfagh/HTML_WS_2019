@@ -43,7 +43,7 @@ while($row = mysqli_fetch_array($result))
         $output.= ",";//콤마붙이기    .=는 +=와 같다(php 문자열 연결)
     }
 
-    $output.='{"address":"'.$row['address'].'"},{"zipcode":"'.$row['zipcode'].'"}';  
+    $output.='{"address":"'.$row['address'].'","zipcode":"'.$row['zipcode'].'"}';  
    
 }
 $output='['.$output.']';
