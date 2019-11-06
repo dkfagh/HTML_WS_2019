@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>vuejsAjax2</title>
+  </head>
+  <body>
+   <div id='app'>
+    <div v-for='product in products'>
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price }}</p>
+    </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+     new Vue({
+        el: '#app',
+        data: {
+            products: []
+        },
+        created() {
+            fetch('http://dkfagh.dothome.co.kr/ajaxDB2.php')   //fetch ~ .then : 자바스크립트에서 Ajax를 처리하기위한 메서드
+                .then((response) => {                          //response에 json데이터 수집
+                    if(response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Network response was not ok');
+                })
+                .then((json) => {
+                        this.products=json;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+    });
+    </script>
+  </body>
+</html>

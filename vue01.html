@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>vue01</title>
+    <style>
+            [v-cloak]{
+                display:none;
+            }
+        </style>
 </head>
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <h1>Hello, {{ name }}</h1>
+        <span v-text="name"></span>
+        <h2 v-text="address"></h2>
+        <h3 v-html="age"></h3>
     </div>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -18,7 +26,9 @@
         el: '#app', // 어떤 엘리먼트에 적용을 할 지 정합니다
         // data 는 해당 뷰에서 사용할 정보를 지닙니다
         data: {
-            name: 'World'
+            name: 'World',
+            address: "서울시",
+            age: "<i>20<i>"
         }   
         });    
     </script>
