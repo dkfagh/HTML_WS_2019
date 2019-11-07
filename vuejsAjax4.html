@@ -7,8 +7,8 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-        $(document).ready(function(){   
-            console.log("zzzzzzzzzzzz");    
+        $(document).ready(function(){
+            console.log("zzzzzzzzzzzz");
                 var app= new Vue({
                     el: '#app',
                     data: {
@@ -31,21 +31,22 @@
                                 }
                             });
                         },
-                        updateMember:function(){
-                            console.log("==================");    
-                            var frmData=$("#frm1").serialize();//폼에 입력한 값 데이터화
+                        updateMember:function(){   //업데이트 메서드
+                            console.log("==================");
+                            var frmData=$("#frm1").serialize();//폼에 입력한 값 데이터화(serialize : 직렬화(객체를 데이터화))
+
                             $.ajax({
-                                type:"POST",
+                                type:"POST",   //POST 방식으로 전송
                                 url:"http://dkfagh.dothome.co.kr/memberUpdate.php",
-                                data:frmData,
-                                success:function(res){                                            
-                                    if(res){                           
-                                        console.log(res.message);  
-                                        $("#message").html(res.message);                        
-                                    }                                
+                                data:frmData,   //서버쪽으로 보내는 데이터
+                                success:function(res){
+                                    if(res){
+                                        console.log(res.message);
+                                        $("#message").html(res.message);
+                                    }
                                 }
                             });
-                        }    
+                        }
                     }
                 });
             app.getMember();
@@ -72,7 +73,7 @@
   <body>
    <div id='app'>
         <form id="frm1">
-                <input type="text" name="id" v-model="id" readonly><br>   <!-- readonly:읽기전용 (편집 불가) -->
+                ID <input type="text" name="id" v-model="id" readonly><br>   <!-- readonly:읽기전용 (편집 불가) -->
                 name <input type="text" name="name" v-model="name"><br>
                 address <input type="text" name="address" v-model="address"><br>
                 <input id="modify" type="button" v-on:click="updateMember" value="회원정보수정">

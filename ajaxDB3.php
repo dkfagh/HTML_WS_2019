@@ -38,7 +38,7 @@ while($row = mysqli_fetch_array($result))
     }
     $output.='{"id":"'.$row['id'].'","name":"'.$row['name'].'","address":"'.$row['address'].'"}';  
 }
-//$output='['.$output.']';
+//$output='['.$output.']';   //검색되는 객체가 하나이기 때문에 굳이 배열을 사용 할 필요가 없음
 
 echo $output;
 
