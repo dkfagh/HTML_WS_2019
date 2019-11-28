@@ -40,7 +40,7 @@
 <body>
     
     <h1> 회원 가입 </h1>
-    <form name="joinForm" action="join.jsp" method="post" onsubmit="return check();">
+    <form name="joinForm" action="joinResult.jsp" method="post" onsubmit="return check();">
         id <input type="text" name="id"><br/>
         pw <input type="password" name="password"><br/>
         name <input type="text" name="name"><br/>
@@ -65,7 +65,8 @@
         <textarea name="introduce" rows="10" cols="50"></textarea><br/>
         photo<br/>
         <input type="file" name="photo">
-        <input type="submit" value="submit">
+        <input type="submit" value="전송">
+        <input type="reset" value="취소">
     </form>
 </body>
 </html>
