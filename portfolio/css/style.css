@@ -108,7 +108,7 @@
 	{
 		color: #bbb;
 	}
-
+	
 	/* Sections/Articles */
 		section,
 		article
@@ -774,7 +774,7 @@
 /*********************************************************************************/
 
 	#nav
-	{
+	{background-color: rgba(88, 88, 88, 0.4);
 	}
 
 		#nav-wrapper

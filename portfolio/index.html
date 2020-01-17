@@ -6,6 +6,8 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
@@ -15,33 +17,58 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
-	</head>
-	<body class="homepage">
 
-	<!-- Header -->
+		<script>
+			$(document).ready(function(){
+
+			  $ ("html,body").animate({scrollTop : 0}, "slow");
+
+			  $("a").on('click', function(event) {
+			
+			  if (this.hash !== "") {
+			
+				event.preventDefault();
+			
+				var hash = this.hash;
+			
+				$('html, body').animate({
+				  scrollTop: $(hash).offset().top
+				}, 800, function(){
+			
+				  window.location.hash = hash;
+				  });
+				}
+			  });
+			})
+		</script>
+
+	</head>
+	<body id="myPage" class="homepage">
+
+	<!-- Header ------------------------------------------------------------------------------------->
 		<div id="header">
 			<div id="nav-wrapper"> 
-				<!-- Nav -->
-				<nav id="nav">
+				<!-- Nav ---------------------------------------------------------------------------->
+				<nav id="nav" class="navbar justify-content-center fixed-top">
 					<ul>
-						<li class="active"><a href="index.html">Homepage</a></li>
-						<li><a href="#">Skills</a></li>
-						<li><a href="#">works</a></li>
-						<li><a href="#">Contact</a></li>
+						<li class="active"><a href="#myPage">Homepage</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#works">Works</a></li>
+						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
 			<div class="container"> 
 				
-				<!-- Logo -->
+				<!-- Logo --------------------------------------------------------------------------->
 				<div id="logo">
-					<h1><a href="#">Portfolio</a></h1>
+					<h1><a href="#myPage">Portfolio</a></h1>
 					<span class="tag">By ㅇㅇㅁ</span>
 				</div>
 			</div>
 		</div>
 
-	<!-- Featured -->
+	<!-- Featured ----------------------------------------------------------------------------------->
 		<div id="featured">
 			<div class="container">
 				<header>
@@ -49,7 +76,7 @@
 				</header>
 				<p>This is <strong>Portfolio</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
 				<hr />
-				<div class="row">
+				<div id="skills" class="row">
 					<section class="3u">
 						<span class="pennant"><span class="fa fa-briefcase"></span></span>
 						<h3>Maecenas luctus lectus</h3>
@@ -98,24 +125,24 @@
 			</div>
 		</div>
 
-	<!-- Main -->
+	<!-- Main ---------------------------------------------------------------------------------------------------------->
 		<div id="main">
 			<div id="content" class="container">
 
-				<div class="row">
+				<div id="works" class="row">
 					<section class="6u">
 						<a href="#" class="image full"><img src="images/pic01.jpg" alt=""></a>
 						<header>
 							<h2>학사 관리 프로그램</h2>
 						</header>
-						<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+						<p>Java의 Swing과 Oracle 연동 기술인 JDBC를 활용한 학사 관리 프로그램</p>
 					</section>				
 					<section class="6u">
 						<a href="#" class="image full"><img src="images/pic02.jpg" alt=""></a>
 						<header>
 							<h2>브랜드 홈페이지 예제</h2>
 						</header>
-						<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+						<p>HTML과 CSS 기술을 활용한 브랜드 홈페이지</p>
 					</section>				
 				</div>
 
@@ -125,14 +152,14 @@
 						<header>
 							<h2>영화 정보 웹 페이지</h2>
 						</header>
-						<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+						<p>HTML과 CSS, JavaScript Mobile을 활용한 영화 정보 웹 페이지</p>
 					</section>				
 					<section class="6u">
 						<a href="#" class="image full"><img src="images/pic04.jpg" alt=""></a>
 						<header>
 							<h2>링컨 코리아 홈페이지 예제</h2>
 						</header>
-						<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+						<p>HTML과 CSS, Jquery, Bootstrap을 활용한 링컨 코리아 메인 페이지</p>
 					</section>				
 				</div>
 			
@@ -140,15 +167,22 @@
 					<section class="6u">
 						<a href="#" class="image full"><img src="images/pic03.jpg" alt=""></a>
 						<header>
-							<h2>영화 정보 웹 페이지</h2>
+							<h2>안드로이드 프로젝트</h2>
 						</header>
-						<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-					</section>				
+						<p>Andtoid Studio기반 Sqlite 기술을 활용한 간단 다이어리 어플리케이션</p>
+					</section>		
+					<section class="6u">
+						<a href="#" class="image full"><img src="images/pic04.jpg" alt=""></a>
+						<header>
+							<h2>팀 프로젝트</h2>
+						</header>
+						<p>취미활동 프로젝트</p>
+					</section>						
 				</div>
 			</div>
 		</div>
 
-	<!-- Tweet -->
+	<!-- Tweet ----------------------------------------------------------------------------------------------------------->
 		<div id="tweet">
 			<div class="container">
 				<section>
@@ -157,12 +191,13 @@
 			</div>
 		</div>
 
-	<!-- Footer -->
+	<!-- Footer ---------------------------------------------------------------------------------------------------------->
 		<div id="footer">
-			<div class="container">
+			<div id="contact" class="container">
 				<section>
 					<header>
 						<h2>Get in touch</h2>
+						<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
 						<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
 					</header>
 					<ul class="contact">
@@ -175,10 +210,14 @@
 			</div>
 		</div>
 
-	<!-- Copyright -->
+	<!-- Copyright ------------------------------------------------------------------------------------------------------->
 		<div id="copyright">
 			<div class="container">
-				Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+				<a href="#myPage" title="To Top">
+					<i class="fas fa-chevron-up"></i>
+				</a>
+				<p>Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+				<p>Copyright &copy; Yang's website</p>
 			</div>
 		</div>
 
