@@ -28,72 +28,266 @@
     <title>링컨코리아 홈페이지</title>
 
     <style>
-        *{padding:0;margin:0;}
-        ul, li{list-style: none;}
-        .container{padding:0;overflow: hidden;}
-        .navbar {margin-bottom: 0;background-color: white;z-index: 9999;border: 0;font: 15px bold black;line-height: 1.42857143 !important;letter-spacing: 4px;border-radius: 0;}
-        .navbar li a, .navbar .navbar-brand {color: black;}
-        .nav li{padding-left:50px;}
-        .navbar-toggler {background-color:darkgray;color: #fff !important;}
-        .carousel-inner img {width: 100%;height: 100%;}
-        .col-md-6, .col-sm-4{width:100%;box-sizing: border-box;padding:0;overflow: hidden;float:left;position:relative;}
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul, li{
+            list-style: none;
+        }
+        .container{
+            padding: 0;
+            overflow: hidden;
+        }
+        .navbar{
+            margin-bottom: 0;
+            background-color: white;
+            z-index: 9999;
+            border: 0;
+            font: 15px bold black;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+        }
+        .navbar li a, .navbar .navbar-brand{
+            color: black;
+        }
+        .nav li{
+            padding-left: 50px;
+        }
+        .navbar-toggler{
+            background-color: darkgray;
+            color: #fff !important;
+        }
+        .carousel-inner img{
+            width: 100%;
+            height: 100%;
+        }
+        .col-md-6, .col-sm-4{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0;
+            overflow: hidden;
+            float: left;
+            position: relative;
+        }
         /* .col-md-6{max-height:771px;} */
         /* .col-sm-3{height:524px;} */
         /* .col-sm-4{height:500px;} */
-        .caption{width:100%;position: absolute;bottom:20px;text-align:center;color:white;font-size:1vw;}
+        .caption{
+            width: 100%;
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            color: white;
+            font-size: 1vw;
+        }
         /* .row1, .row2{padding-top:10px;}
         .row1 img{transform:scale(1);transition: 0.5s;height:100%}
         .row1 img:hover{transform: scale(1.05);}
         .row2 img{transform:scale(1);transition: 0.8s;height:100%}
         .row2 img:hover{transform: scale(1.1);}*/
 
-        .s-img-2{display: none;}
+        .s-img-2{
+            display: none;
+        }
 
-        #caption2{position:absolute;top:32%;}
-        #caption3{position:absolute;top:70%;right:5%;text-align: right;}
-        #caption4{position:absolute;top:30%;right:-62%;}
-        #caption5{position:absolute;top:25%;right:5%;text-align: right;}
+        #caption2{
+            position: absolute;
+            top: 32%;
+        }
+        #caption3{
+            position: absolute;
+            top: 70%;
+            right: 5%;
+            text-align: right;
+        }
+        #caption4{
+            position: absolute;
+            top: 30%;
+            right: -62%;
+        }
+        #caption5{
+            position: absolute;
+            top: 25%;
+            right: 5%;
+            text-align: right;
+        }
 
-        #box1,#box2{padding-top:10px;box-sizing: border-box;}
-        #box-left{box-sizing: border-box !important;height: 700px;}
-        #box-right1, #box-right2{box-sizing: border-box !important;height:500px;overflow: hidden;}
-        #box-bottom{box-sizing: border-box !important;height:200px;}
-        #box1 img{transform:scale(1);transition:0.5s;height:100%;}
-        #box1 img:hover{transform:scale(1.05);}
-        #box2 .image{transform:scale(1);transition:0.8s;height:100%;}
-        #box2 .image:hover{transform:scale(1.1);}
+        #box1,#box2{
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+        #box-left{
+            box-sizing: border-box !important;
+            height: 700px;
+        }
+        #box-right1, #box-right2{
+            box-sizing: border-box !important;
+            height: 500px;
+            overflow: hidden;
+        }
+        #box-bottom{
+            box-sizing: border-box !important;
+            height: 200px;
+        }
+        #box1 img{
+            transform: scale(1);
+            transition: 0.5s;
+            height: 100%;
+        }
+        #box1 img:hover{
+            transform: scale(1.05);
+        }
+        #box2 .image{
+            transform: scale(1);
+            transition: 0.8s;
+            height: 100%;
+        }
+        #box2 .image:hover{
+            transform: scale(1.1);
+        }
+
+        .brochure img{
+            width: 100%;
+        }
         
-        .modal-body{float:left;}
-        .modal-content{width:900px;height:700px;box-sizing: border-box;}
-        .modal-header img{width:100%;}
-        #myModal2 .modal-body div{height:30px;}
-        #board{padding:50px 0;}
-        #bottom-menu{padding-left:50px;margin:30px;}
-        #bottom-menu a, .accordion a{text-decoration:none;font-size:14px;color:darkgray;margin:5px 0;transition: 0.5s;}
-        #bottom-menu a:hover{color:#C55F07;}
-        .accordion a:hover{color:#C55F07;}
-        .accordion {display: none;background-color: white;color: #444;cursor: pointer;padding: 18px;width: 100%;border: none;text-align: left;outline: none;font-size: 15px;transition: 0.4s;}
-        .panel {padding: 0 18px;background-color: white;max-height: 0;overflow: hidden;transition: max-height 0.2s ease-out;}
-        .panel a{padding-left:40px;text-decoration: none;color:darkgray;font-size:14px;transition: 0.5s;}
-        .panel a:hover{color:#C55F07;}
-        footer .container{background:black; color:darkgray;margin:auto;text-align: center;font-size:14px;padding:10px 0;}
-        .container span{padding-left:20px;padding-right:30px;outline: none;}
-        footer a{text-decoration: none;color:darkgray;}
-        footer a:hover{text-decoration: none;color:darkgray;}
-        footer a:active{text-decoration: none;color:darkgray;}
+        .modal-body{
+            float: left;
+            padding: 10px;
+        }
+        .modal-content{
+            width: 900px;
+            height: 700px;
+            box-sizing: border-box;
+        }
+        .modal-header img{
+            width: 100%;
+        }
+        #myModal2 .modal-body div{
+            line-height: 250px;
+            /* vertical-align: middle; */
+        }
+        #myModal2 .modal-body div img{
+            vertical-align: middle;
+        }
+        #board{
+            padding: 50px 0;
+        }
+        #bottom-menu{
+            padding-left: 50px;
+            margin: 30px;
+        }
+        #bottom-menu a, .accordion a{
+            text-decoration: none;
+            font-size: 14px;
+            color: darkgray;
+            margin: 5px 0;
+            transition: 0.5s;
+        }
+        #bottom-menu a:hover{
+            color: #C55F07;
+        }
+        .accordion a:hover{
+            color: #C55F07;
+        }
+        .accordion {
+            display: none;
+            background-color: white;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .panel{
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+        .panel a{
+            padding-left: 40px;
+            text-decoration: none;
+            color:  darkgray;
+            font-size: 14px;
+            transition: 0.5s;
+        }
+        .panel a:hover{
+            color: #C55F07;
+        }
+        footer .container{
+            background: black;
+            color: darkgray;
+            margin: auto;
+            text-align: center;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+        .container span{
+            padding-left: 20px;
+            padding-right: 30px;
+            outline: none;
+        }
+        footer a{
+            text-decoration: none;
+            color: darkgray;
+        }
+        footer a:hover{
+            text-decoration: none;
+            color: darkgray;
+        }
+        footer a:active{
+            text-decoration: none;
+            color: darkgray;
+        }
 
-        @media screen and (max-width:768px){
-            #box-left, #box-right1, #box-right2, #box-bottom{width:100px;height:400px;}
-            .s-img-1{display: none;}
-            .s-img-2{display: block;}
-            #caption2{position:absolute;top:75%;}
-            #caption4{position:absolute;top:86%;right:15%;}
-            #caption5{position:absolute;top:12%;}
-            .accordion{display: block;padding-left:30px;}
-            #bottom-menu{display:none;}
-            .caption{bottom:30%;}
-            #bottom-menu h5{padding-top:30px;}
-            .btn-block{text-align: left;color:black;}
+        @media screen and (max-width: 768px){
+            #box-left, #box-right1, #box-right2, #box-bottom{
+                width: 100px;
+                height: 400px;
+            }
+            .s-img-1{
+                display: none;
+            }
+            .s-img-2{
+                display: block;
+            }
+            #caption2{
+                position: absolute;
+                top: 75%;
+            }
+            #caption4{
+                position: absolute;
+                top: 86%;
+                right: 15%;
+            }
+            #caption5{
+                position: absolute;
+                top: 12%;
+            }
+            .accordion{
+                display: block;
+                padding-left: 30px;
+            }
+            #bottom-menu{
+                display: none;
+            }
+            .caption{
+                bottom: 30%;
+            }
+            #bottom-menu h5{
+                padding-top: 30px;
+            }
+            .btn-block{
+                text-align: left;
+                color: black;
+            }
         }
     </style>
 
@@ -344,7 +538,7 @@
                                 <!---- Modal Header ---->
                                 <div class="modal-header">
                                 <h4 class="modal-title" style="color:black;">전시장 위치</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                                 </div>
                                 <!---- Modal body ---->
                                 <div class="modal-body">
@@ -392,34 +586,38 @@
                                 <!---- Modal Header ---->
                                 <div class="modal-header" style="padding:0;margin:0;">
                                     <img src="img/modal_title.png" alt="title">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                                 </div>
                                 <!---- Modal body ---->
                                 <div class="modal-body">
-                                    <h3 style="color:black;">브로셔 보기</h3>
+                                    <h2 style="color:black; margin-top:10px; margin-bottom:30px;">브로셔 보기</h2>
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 brochure" style="vertical-align: middle;">
                                             <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY-Continental.pdf" target="_blank">
-                                            <img src="img/continental.png" alt="continental"></a>
+                                            <img src="img/brochure_continental.png" alt="continental"></a>
+                                            <span style="color:black;">CONTINENTAL</span>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 brochure">
                                             <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY%20MKZ%20.pdf" target="_blank">
-                                            <img src="img/mkz.png" alt="mkz"></a>
+                                            <img src="img/brochure_mkz.png" alt="mkz"></a>
+                                            <span style="color:black;">MKZ</span>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 brochure">
                                             <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MKC-Final-Brochure-2018.pdf" target="_blank">
-                                            <img src="img/mkc.png" alt="mkc"></a>    
+                                            <img src="img/brochure_mkc.png" alt="mkc"></a>
+                                            <span style="color:black;">MKC</span>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 brochure">
                                             <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY-Nautilus.pdf" target="_blank">  
-                                            <img src="img/nautilus.png" alt="nautilus"></a>
+                                            <img src="img/brochure_nautilus.png" alt="nautilus"></a>
+                                            <span style="color:black;">NAUTILUS</span>
                                         </div>
                                     </div>
                                 </div>
                                 <!---- Modal footer ---->
                                 <div class="modal-footer">
-                                    <img src="img/modal_logo.png" alt="logo">
-                                <!-- <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button> -->
+                                    <!-- <img src="img/modal_logo.png" alt="logo"> -->
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -439,52 +637,52 @@
                                     <!---- Modal Header ---->
                                     <div class="modal-header" style="padding:0;margin:0;">
                                         <img src="img/img12_2.png" alt="title">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                                     </div>
                                     <!---- Modal body ---->
                                     <div class="modal-body">
-                                        <h3 style="color:black;">시승 신청</h3>
+                                        <h2 style="color:black; margin-top:10px; margin-bottom:30px;">시승 신청</h2>
                                         <div class="row">
                                             <form action="booking.jsp" method="post" class="form-inline" style="width:100%;color:black;font-size: 15px;">
                                                 <div class="col-sm-6">
                                                     <label for="car">어떤 자동차에 관심이 있나요? ＊</label>
-                                                    <select name="car" class="form-control form-group">
-                                                        <option value="CONTINENTAL">링컨 CONTINENTAL</option>
-                                                        <option value="MKZ">링컨 MKZ</option>
-                                                        <option value="NAUTILUS">링컨 NAUTILUS</option>
-                                                        <option value="MKC">링컨 MKC</option>
-                                                    </select>
-                                                    <br>
+                                                        <select name="car" class="form-control form-group">
+                                                            <option value="CONTINENTAL">링컨 CONTINENTAL</option>
+                                                            <option value="MKZ">링컨 MKZ</option>
+                                                            <option value="NAUTILUS">링컨 NAUTILUS</option>
+                                                            <option value="MKC">링컨 MKC</option>
+                                                        </select>
+                                                    <br><br>
                                                     <label for="name">이름 ＊</label>
-                                                    <input type="text" name="name" class="form-control form-group">
-                                                    <br>
+                                                        <input type="text" name="name" class="form-control form-group">
+                                                    <br><br>
                                                     <label for="email">이메일 ＊</label>
-                                                    <input type="email" name="email" class="form-control form-group">
+                                                        <input type="email" name="email" class="form-control form-group">
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label for="plan">신차를 언제 구입할 계획이십니까? ＊</label>
-                                                    <select name="plan" class="form-control form-group">
-                                                        <option value="">선택하세요</option>
-                                                        <option value="1m">0-30일</option>
-                                                        <option value="3m">1-3개월</option>
-                                                        <option value="6m">4-6개월</option>
-                                                        <option value="a6m">6개월 이후</option>
-                                                        <option value="none">정해진 계획 없음</option>
-                                                    </select>
-                                                    <br>
+                                                        <select name="plan" class="form-control form-group">
+                                                            <option value="">선택하세요</option>
+                                                            <option value="1m">0-30일</option>
+                                                            <option value="3m">1-3개월</option>
+                                                            <option value="6m">4-6개월</option>
+                                                            <option value="a6m">6개월 이후</option>
+                                                            <option value="none">정해진 계획 없음</option>
+                                                        </select>
+                                                    <br><br>
                                                     <label for="add">추가요청사항</label>
-                                                    <input type="text" name="add" class="form-control form-group">
-                                                    <br>
+                                                        <input type="text" name="add" class="form-control form-group">
+                                                    <br><br>
                                                     <label for="place">전시장을 선택해주세요. ＊</label>
-                                                    <select name="place" class="form-control form-group">
-                                                        <option value="">선택하세요</option>
-                                                        <option value="kangseo">강서 전시장(선인자동차)</option>
-                                                        <option value="dongdaemun">동대문 전시장(선인자동차)</option>
-                                                        <option value="mapo">마포 전시장(더파크모터스)</option>
-                                                        <option value="mia">미아 전시장(더파크모터스)</option>
-                                                        <option value="songpa">송파 전시장(프리미어모터스)</option>
-                                                        <option value="yeongdeungpo">영등포 전시장(프리미어모터스)</option>
-                                                    </select>
+                                                        <select name="place" class="form-control form-group">
+                                                            <option value="">선택하세요</option>
+                                                            <option value="kangseo">강서 전시장(선인자동차)</option>
+                                                            <option value="dongdaemun">동대문 전시장(선인자동차)</option>
+                                                            <option value="mapo">마포 전시장(더파크모터스)</option>
+                                                            <option value="mia">미아 전시장(더파크모터스)</option>
+                                                            <option value="songpa">송파 전시장(프리미어모터스)</option>
+                                                            <option value="yeongdeungpo">영등포 전시장(프리미어모터스)</option>
+                                                        </select>
                                                 </div>
                                                 <input type="submit" value="신청하기" class="btn" style="color:white;background:rgb(196, 95, 0);margin:auto;margin-top:15px;">
                                             </form>
@@ -492,7 +690,7 @@
                                     </div>
                                     <!---- Modal footer ---->
                                     <div class="modal-footer">
-                                    <!-- <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button> -->
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
