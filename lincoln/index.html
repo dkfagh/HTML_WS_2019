@@ -148,27 +148,37 @@
             transform: scale(1.1);
         }
 
+        .brochure{
+            height: 200px;
+        }
+        .brochureImage{
+            height: 100px;
+        }
         .brochure img{
             width: 100%;
         }
         
+        .modal-dialog{
+            width:900px !important;
+        }
         .modal-body{
             float: left;
             padding: 10px;
         }
         .modal-content{
             width: 900px;
-            height: 700px;
+            height: 750px;
             box-sizing: border-box;
         }
         .modal-header img{
             width: 100%;
         }
+        .modal-footer{
+            height:50px;
+        }
+
         #myModal2 .modal-body div{
             line-height: 250px;
-            /* vertical-align: middle; */
-        }
-        #myModal2 .modal-body div img{
             vertical-align: middle;
         }
         #board{
@@ -289,6 +299,7 @@
                 color: black;
             }
         }
+        
     </style>
 
     <script>
@@ -533,7 +544,7 @@
                     <a href="#" class="btn btn-outline-light text-white" data-toggle="modal" data-target="#myModal">바로 가기 ></a>
                     <!-------------- The Modal --------------->
                     <div class="modal" id="myModal">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <!---- Modal Header ---->
                                 <div class="modal-header">
@@ -541,7 +552,7 @@
                                 <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                                 </div>
                                 <!---- Modal body ---->
-                                <div class="modal-body">
+                                <div class="modal-body" style="height: 500px !important;">
                                     <div id="kakaomap" style="width: 100%;height: 500px;"></div>
                                     <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=00291b6743bb5f372557da7b5c5afa29"></script>
                                         <script> 
@@ -581,7 +592,7 @@
                     <a href="#" class="btn btn-outline-light text-white" data-toggle="modal" data-target="#myModal2">바로 가기 ></a>
                     <!-------------- The Modal --------------->
                     <div class="modal" id="myModal2">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <!---- Modal Header ---->
                                 <div class="modal-header" style="padding:0;margin:0;">
@@ -589,27 +600,39 @@
                                     <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                                 </div>
                                 <!---- Modal body ---->
-                                <div class="modal-body">
+                                <div class="modal-body" style="height: 390px !important;">
                                     <h2 style="color:black; margin-top:10px; margin-bottom:30px;">브로셔 보기</h2>
                                     <div class="row">
-                                        <div class="col-sm-3 brochure" style="vertical-align: middle;">
-                                            <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY-Continental.pdf" target="_blank">
-                                            <img src="img/brochure_continental.png" alt="continental"></a>
-                                            <span style="color:black;">CONTINENTAL</span>
+                                        <div class="col-sm-3 brochure">
+                                            <div class="brochureImage">
+                                                <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY-Continental.pdf" target="_blank">
+                                                    <img src="img/brochure_continental.png" alt="continental">
+                                                </a>
+                                            </div>
+                                            <span style="color:black;top:-100px;">CONTINENTAL</span>
                                         </div>
                                         <div class="col-sm-3 brochure">
-                                            <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY%20MKZ%20.pdf" target="_blank">
-                                            <img src="img/brochure_mkz.png" alt="mkz"></a>
+                                            <div class="brochureImage">
+                                                <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY%20MKZ%20.pdf" target="_blank">
+                                                    <img src="img/brochure_mkz.png" alt="mkz">
+                                                </a>
+                                            </div>
                                             <span style="color:black;">MKZ</span>
                                         </div>
                                         <div class="col-sm-3 brochure">
-                                            <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MKC-Final-Brochure-2018.pdf" target="_blank">
-                                            <img src="img/brochure_mkc.png" alt="mkc"></a>
+                                            <div class="brochureImage">
+                                                <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MKC-Final-Brochure-2018.pdf" target="_blank">
+                                                    <img src="img/brochure_mkc.png" alt="mkc">
+                                                </a>
+                                            </div>
                                             <span style="color:black;">MKC</span>
                                         </div>
                                         <div class="col-sm-3 brochure">
-                                            <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY-Nautilus.pdf" target="_blank">  
-                                            <img src="img/brochure_nautilus.png" alt="nautilus"></a>
+                                            <div class="brochureImage">
+                                                <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY-Nautilus.pdf" target="_blank">  
+                                                    <img src="img/brochure_nautilus.png" alt="nautilus">
+                                                </a>
+                                            </div>
                                             <span style="color:black;">NAUTILUS</span>
                                         </div>
                                     </div>
@@ -617,7 +640,7 @@
                                 <!---- Modal footer ---->
                                 <div class="modal-footer">
                                     <!-- <img src="img/modal_logo.png" alt="logo"> -->
-                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -632,7 +655,7 @@
                     <a href="#" class="btn btn-outline-light text-white" data-toggle="modal" data-target="#myModal3">바로 가기 ></a>
                     <!-------------- The Modal --------------->
                     <div class="modal" id="myModal3">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <!---- Modal Header ---->
                                     <div class="modal-header" style="padding:0;margin:0;">
@@ -690,7 +713,7 @@
                                     </div>
                                     <!---- Modal footer ---->
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -703,7 +726,7 @@
     <!------------ Third Row END -------------->
     <!---------------- Board ------------------>
     <div class="container" id="board">
-        <h3 class="text-center">개인정보취급방침</h3>
+        <h3 class="text-center" style="padding-bottom:10px;">개인정보취급방침</h3>
         <iframe id="iframe1" src="http://dkfagh.dothome.co.kr/board/bbs/board.php?bo_table=board01" width="100%" onload="autoResize(this)" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
     </div>
     <!----- Board END ----->
