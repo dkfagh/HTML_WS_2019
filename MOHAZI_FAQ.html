@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- FAQ accordion -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+
+    <title>Document</title>
+
+    <style>
+        /* reset */
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        .row{
+            padding:5px;
+        }
+        
+        ul, li{
+            list-style: none;
+        }
+        
+        li a:hover{
+            text-decoration: none;
+        }
+        
+        
+        .FAQ-h{            
+            width: 100%;       
+            right: 10%;
+            height: 160px;
+            z-index: 5;
+        }
+        
+        .Explanation{            
+            height: 80px;
+            width: 100%;            
+        }
+            
+        .FAQsearch{
+            width: 100%;
+            border-bottom:solid 1px #b1fdc7;
+            margin-bottom: 20px;
+        }
+
+        #inputKeyword{
+            width:50%;
+            border:none;
+        }
+        
+        .FAQsearch button{            
+            /* font-size: 25px; */
+            border:none;            
+        }
+        
+        #category ul li{
+            list-style:none;
+        }
+        
+        #category li{        	
+            float:left;
+        }
+        
+        .category{
+            margin-left:30px;
+        }
+        
+        #category a{
+            color:black;
+        }
+        
+        .catSelected{
+            color:#66a385;
+            font:bold;
+        }
+
+        
+        
+        .FAQ-b{            
+            width: 100%;            
+            right: 10%;
+            /* top:240px; */
+            z-index: 4;
+        }
+        
+        .accordions {
+             background-color: white;
+             color: black;
+             cursor: pointer;
+             padding: 18px;
+             width: 100%;
+             border: none;
+             text-align: left;
+             outline: none;
+             font-size: 15px;
+             transition: 0.4s;
+             border-bottom:lightgray
+        }
+    
+        .panel {
+             padding: 0 18px;      
+             background-color: white;
+             overflow: hidden;
+             border: solid gray 0.5px;
+             transition: max-height 0.2s ease-out;
+        }
+        
+    </style>
+
+</head>
+<body>
+    
+        
+        <div class="container">
+            <!-- FAQ 페이지 시작 -->
+            <!-- 내정보 네비, 페이지 분할 -->
+            <div class="row"> 
+                    <div class="FAQ-h">
+                        <div class="Explanation">
+                            <h2>FAQ</h2>
+                            <p>FAQ에 없는 질문에 관한 문의는 admin@mohazi.com으로 메일 부탁드립니다.</p>
+                        </div>
+                        
+                        <!-------------------------- search form ------------------------------->
+                        <div class="FAQsearch">
+                            <form id="FAQsearchForm" action="/FAQ" method="get">
+                                <input id="inputKeyword" type="text" name="keyword" placeholder="검색어를 입력하세요." />
+                                <button class="btn"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                        <!----- search form END ----->
+                        
+                        <div id="category">
+                            <ul>
+                                <li>
+                                    <a id="total" class="catSelected" href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a id="info" class="category" href="#">이용 안내</a>
+                                </li>
+                                <li>
+                                    <a id="attendee" class="category" href="#">참여자</a>
+                                </li>
+                                <li>
+                                    <a id="host" class="category" href="#">개설자</a>
+                                </li>
+                                <li>
+                                    <a id="user" class="category" href="#">회원 정보</a>
+                                </li>
+                                <li>
+                                    <a id="payment" class="category" href="#">결제/환불</a>
+                                </li>
+                            </ul>
+                        </div>              
+                    </div>
+    
+                    <div class="FAQ-b">
+                        <ul id="accordion">
+                            <li style="display:block">	                    	
+                                <button class="accordions">${list.title}</button>
+                                <div class="panel">
+                                    <p>${list.content}</p>
+                                </div>	                    	
+                            </li>
+                            <li style="display:block">	                    	
+                                <button class="accordions">${list.title}</button>
+                                <div class="panel">
+                                    <p>${list.content}</p>
+                                </div>	                    	
+                            </li>
+                            <li style="display:block">	                    	
+                                <button class="accordions">${list.title}</button>
+                                <div class="panel">
+                                    <p>${list.content}</p>
+                                </div>	                    	
+                            </li>
+                            <li style="display:block">	                    	
+                                <button class="accordions">${list.title}</button>
+                                <div class="panel">
+                                    <p>${list.content}</p>
+                                </div>	                    	
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- FAQ 페이지 끝 -->
+              </div>
+              <!-- 내정보 네비, 페이지 분할 -->          
+        </div>
+        <!-- 바디 부분 끝 ----------------------------------------------------------------->
+
+        <script>
+            // FAQ accordion start
+        $(".panel").hide();
+        $(".accordions").click(function(){
+            $(this).next().slideToggle();
+            $(".accordions").not(this).next().slideUp();
+        });    
+        </script>
+    
+</body>
+</html>
